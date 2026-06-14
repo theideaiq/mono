@@ -1,7 +1,7 @@
 'use client';
 
-import { createClient } from '@auibsal/auth/client';
-import type { Role, User } from '@auibsal/database/types';
+import { createClient } from '@theideaiq/auth/client';
+import type { Role, User } from '@theideaiq/database/types';
 import { Save, Users } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
@@ -56,7 +56,7 @@ export default function UsersPage() {
     const { error } = await supabase
       .from('users')
       .update({
-        role: newRole as import('@auibsal/database/types').Database['public']['Enums']['user_role'],
+        role: newRole as import('@theideaiq/database/types').Database['public']['Enums']['user_role'],
       })
       .eq('id', userId);
 
@@ -86,7 +86,7 @@ export default function UsersPage() {
       </div>
 
       {/* Brutalist Data Table fully inverted for dynamic theming */}
-      <div className="overflow-x-auto border-4 border-border bg-card text-foreground shadow-[12px_12px_0px_0px_var(--brutalist-shadow)]">
+      <div className="overflow-x-auto border border-border bg-card text-foreground shadow-2xl">
         <table className="w-full border-collapse text-left">
           <thead className="border-b-4 border-border bg-foreground text-background">
             <tr>
@@ -103,11 +103,11 @@ export default function UsersPage() {
               <tr>
                 <td
                   colSpan={4}
-                  className="m-4 border-4 border-dashed border-border/20 px-6 py-12 text-center text-sm font-bold tracking-widest text-foreground/50 uppercase"
+                  className="m-4 border border-dashed border-border/20 px-6 py-12 text-center text-sm font-bold tracking-widest text-foreground/50 uppercase"
                 >
                   <div className="flex items-center justify-center gap-3">
                     {/* Reverted to semantic brutalist loader */}
-                    <div className="h-4 w-4 animate-spin rounded-none bg-primary"></div>
+                    <div className="h-4 w-4 animate-spin rounded-2xl bg-primary"></div>
                     Loading Database...
                   </div>
                 </td>
@@ -116,7 +116,7 @@ export default function UsersPage() {
               <tr>
                 <td
                   colSpan={4}
-                  className="m-4 border-4 border-dashed border-border/20 px-6 py-12 text-center text-sm font-bold tracking-widest text-foreground/50 uppercase"
+                  className="m-4 border border-dashed border-border/20 px-6 py-12 text-center text-sm font-bold tracking-widest text-foreground/50 uppercase"
                 >
                   No users found.
                 </td>
@@ -132,7 +132,7 @@ export default function UsersPage() {
                     <td className="px-6 py-4 text-sm font-bold">{user.full_name}</td>
                     <td className="px-6 py-4 text-sm font-bold">
                       {user.university_id === 'EXTERNAL' ? (
-                        <span className="border-2 border-primary bg-primary px-2 py-1 text-xs tracking-widest text-background uppercase shadow-[2px_2px_0px_0px_var(--brutalist-shadow)]">
+                        <span className="border border-primary bg-primary px-2 py-1 text-xs tracking-widest text-background uppercase shadow-2xl">
                           External Affiliate
                         </span>
                       ) : (
@@ -144,7 +144,7 @@ export default function UsersPage() {
                         aria-label={`Select role for ${user.full_name}`}
                         value={activeRole}
                         onChange={(e) => handleRoleChange(user.id, e.target.value as Role)}
-                        className={`cursor-pointer rounded-none border-2 p-2 text-sm font-bold tracking-wider uppercase transition-colors focus:outline-none ${
+                        className={`cursor-pointer rounded-2xl border p-2 text-sm font-bold tracking-wider uppercase transition-colors focus:outline-none ${
                           hasChanged
                             ? 'border-primary bg-primary/10 text-primary focus:ring-1 focus:ring-primary'
                             : 'border-border bg-background text-foreground hover:bg-foreground/5 focus:border-primary focus:ring-1 focus:ring-primary'
@@ -162,14 +162,14 @@ export default function UsersPage() {
                         onClick={() => saveRole(user.id, user.role || 'member')}
                         // Disable if saving OR if no change has been made
                         disabled={savingId === user.id || !hasChanged}
-                        className={`inline-flex items-center gap-2 border-2 px-4 py-2 text-xs font-bold tracking-widest uppercase transition-all ${
+                        className={`inline-flex items-center gap-2 border px-4 py-2 text-xs font-bold tracking-widest uppercase transition-all ${
                           hasChanged
-                            ? 'border-border bg-foreground text-background shadow-[4px_4px_0px_0px_var(--brutalist-shadow)] hover:-translate-y-0.5 hover:border-primary hover:bg-primary hover:shadow-[6px_6px_0px_0px_var(--brutalist-shadow)]'
+                            ? 'border-border bg-foreground text-background shadow-2xl hover:-translate-y-0.5 hover:border-primary hover:bg-primary hover:shadow-2xl'
                             : 'cursor-not-allowed border-border/50 bg-background text-foreground/30'
                         }`}
                       >
                         {savingId === user.id ? (
-                          <div className="h-3 w-3 animate-spin rounded-none bg-background"></div>
+                          <div className="h-3 w-3 animate-spin rounded-2xl bg-background"></div>
                         ) : (
                           <Save size={14} />
                         )}

@@ -1,4 +1,4 @@
-# @auibsal/storage
+# @theideaiq/storage
 
 ## ⚡ Overview
 Core architecture and dependencies.

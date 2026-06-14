@@ -1,5 +1,5 @@
 // 1. Synchronized with the named export from the UI package
-import { Footer as UIFooter } from '@auibsal/ui/components/layout/Footer';
+import { Footer as UIFooter } from '@theideaiq/ui/components/layout/Footer';
 import { getTranslations } from 'next-intl/server';
 
 // 2. Strictly typed locale parameter

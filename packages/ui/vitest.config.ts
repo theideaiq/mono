@@ -1,5 +1,5 @@
 import { mergeConfig, defineConfig } from 'vitest/config';
-import { sharedVitestConfig } from '@auibsal/testing/vitest';
+import { sharedVitestConfig } from '@theideaiq/testing/vitest';
 
 export default mergeConfig(
   sharedVitestConfig,

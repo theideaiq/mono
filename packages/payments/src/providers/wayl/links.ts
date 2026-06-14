@@ -5,7 +5,7 @@ import type {
   WaylLinkRecord, 
   WaylLinkStatus 
 } from './types';
-import { env } from '@auibsal/env';
+import { env } from '@theideaiq/env';
 
 /**
  * Validates authentication credentials directly against Wayl's validation sequence.

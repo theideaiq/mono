@@ -1,7 +1,7 @@
 import { WebhookHandler } from '@liveblocks/node';
 import { NextRequest, NextResponse } from 'next/server';
-import { createAdminClient } from '@auibsal/auth/admin';
-import { env } from '@auibsal/env';
+import { createAdminClient } from '@theideaiq/auth/admin';
+import { env } from '@theideaiq/env';
 
 const webhookHandler = new WebhookHandler(env.LIVEBLOCKS_WEBHOOK_SECRET as string);
 

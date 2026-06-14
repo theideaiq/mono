@@ -1,4 +1,4 @@
-# @auibsal/i18n
+# @theideaiq/i18n
 
 ## ⚡ Overview
 Core architecture and dependencies.

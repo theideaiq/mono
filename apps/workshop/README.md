@@ -1,4 +1,4 @@
-# @auibsal/workshop
+# @theideaiq/workshop
 
 ## ⚡ Overview
 Core architecture and dependencies.

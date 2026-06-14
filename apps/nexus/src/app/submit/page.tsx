@@ -1,7 +1,7 @@
 'use client';
 
-import { createClient } from '@auibsal/auth/client';
-import type { SubmissionType } from '@auibsal/database/types';
+import { createClient } from '@theideaiq/auth/client';
+import type { SubmissionType } from '@theideaiq/database/types';
 import {
   ArrowLeft,
   CheckSquare,
@@ -14,7 +14,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 // IMPORT THE SINGLE-PLAYER ENGINE INSTEAD OF THE UI PRIMITIVE
-import { SinglePlayerEditor } from '@auibsal/editor/single-player';
+import { SinglePlayerEditor } from '@theideaiq/editor/single-player';
 
 export default function SubmitWorkPage() {
   const [title, setTitle] = useState('');
@@ -122,7 +122,7 @@ export default function SubmitWorkPage() {
   if (status === 'success') {
     return (
       <div className="mx-auto mt-8 max-w-2xl px-4 md:mt-24">
-        <div className="flex flex-col items-center border-4 border-border bg-card p-8 text-center text-foreground shadow-[8px_8px_0px_0px_var(--brutalist-shadow)] md:p-12 md:shadow-[16px_16px_0px_0px_var(--brutalist-shadow)]">
+        <div className="flex flex-col items-center border border-border bg-card p-8 text-center text-foreground shadow-2xl md:p-12 md:shadow-2xl">
           <CheckSquare size={64} className="mb-6 text-green-500" />
           <h2 className="mb-4 border-b-4 border-border pb-4 text-2xl font-black tracking-widest uppercase md:text-3xl">
             Manuscript Secured
@@ -133,7 +133,7 @@ export default function SubmitWorkPage() {
           </p>
           <Link
             href="/"
-            className="flex w-full items-center justify-center gap-3 border-4 border-border bg-foreground px-6 py-4 text-sm font-bold tracking-widest text-background uppercase shadow-[4px_4px_0px_0px_var(--primary)] transition-all hover:-translate-y-1 hover:border-primary hover:bg-primary hover:shadow-[6px_6px_0px_0px_var(--primary)] md:w-auto md:px-8 md:text-base md:shadow-[6px_6px_0px_0px_var(--primary)] md:hover:shadow-[8px_8px_0px_0px_var(--primary)]"
+            className="flex w-full items-center justify-center gap-3 border border-border bg-foreground px-6 py-4 text-sm font-bold tracking-widest text-background uppercase shadow-2xl transition-all hover:-translate-y-1 hover:border-primary hover:bg-primary hover:shadow-2xl md:w-auto md:px-8 md:text-base md:shadow-2xl md:hover:shadow-2xl"
           >
             <ArrowLeft size={20} />
             Return to Dashboard
@@ -153,7 +153,7 @@ export default function SubmitWorkPage() {
 
       <form
         onSubmit={handleSubmit}
-        className="space-y-8 border-4 border-border bg-card p-6 shadow-[8px_8px_0px_0px_var(--brutalist-shadow)] md:p-12 md:shadow-[16px_16px_0px_0px_var(--brutalist-shadow)]"
+        className="space-y-8 border border-border bg-card p-6 shadow-2xl md:p-12 md:shadow-2xl"
       >
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           <div className="space-y-3">
@@ -169,7 +169,7 @@ export default function SubmitWorkPage() {
               required
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              className="w-full rounded-none border-4 border-border bg-background p-4 text-base font-bold text-foreground transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none md:text-lg"
+              className="w-full rounded-2xl border border-border bg-background p-4 text-base font-bold text-foreground transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none md:text-lg"
             />
           </div>
 
@@ -188,7 +188,7 @@ export default function SubmitWorkPage() {
                 setFile(null);
                 setContent('');
               }}
-              className="w-full cursor-pointer rounded-none border-4 border-border bg-background p-4 text-base font-bold text-foreground transition-all hover:bg-foreground/5 focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none md:text-lg"
+              className="w-full cursor-pointer rounded-2xl border border-border bg-background p-4 text-base font-bold text-foreground transition-all hover:bg-foreground/5 focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none md:text-lg"
             >
               <option value="essay">Essay / Non-Fiction</option>
               <option value="fiction">Fiction</option>
@@ -212,7 +212,7 @@ export default function SubmitWorkPage() {
             <p className="mb-4 text-xs font-bold tracking-widest text-foreground/60 uppercase">
               Requires uncompressed, high-resolution JPEG or PNG matrix.
             </p>
-            <div className="group relative flex cursor-pointer flex-col items-center justify-center border-4 border-dashed border-border bg-background p-8 text-center transition-colors hover:bg-foreground/5 md:p-12">
+            <div className="group relative flex cursor-pointer flex-col items-center justify-center border border-dashed border-border bg-background p-8 text-center transition-colors hover:bg-foreground/5 md:p-12">
               <input
                 id="file-upload"
                 type="file"
@@ -244,7 +244,7 @@ export default function SubmitWorkPage() {
                   setSubmissionMethod('editor');
                   setFile(null);
                 }}
-                className={`flex-1 border-4 p-3 text-xs font-bold tracking-widest uppercase transition-all md:text-sm ${submissionMethod === 'editor' ? 'border-primary bg-primary/10 text-foreground' : 'border-border bg-background text-foreground/50 hover:border-primary/50 hover:text-foreground'}`}
+                className={`flex-1 border p-3 text-xs font-bold tracking-widest uppercase transition-all md:text-sm ${submissionMethod === 'editor' ? 'border-primary bg-primary/10 text-foreground' : 'border-border bg-background text-foreground/50 hover:border-primary/50 hover:text-foreground'}`}
               >
                 Use Editor
               </button>
@@ -254,7 +254,7 @@ export default function SubmitWorkPage() {
                   setSubmissionMethod('pdf');
                   setContent('');
                 }}
-                className={`flex-1 border-4 p-3 text-xs font-bold tracking-widest uppercase transition-all md:text-sm ${submissionMethod === 'pdf' ? 'border-primary bg-primary/10 text-foreground' : 'border-border bg-background text-foreground/50 hover:border-primary/50 hover:text-foreground'}`}
+                className={`flex-1 border p-3 text-xs font-bold tracking-widest uppercase transition-all md:text-sm ${submissionMethod === 'pdf' ? 'border-primary bg-primary/10 text-foreground' : 'border-border bg-background text-foreground/50 hover:border-primary/50 hover:text-foreground'}`}
               >
                 Upload PDF
               </button>
@@ -286,7 +286,7 @@ export default function SubmitWorkPage() {
                 <p className="mb-4 text-xs font-bold tracking-widest text-foreground/60 uppercase">
                   Required for theatre scripts or heavily formatted submissions.
                 </p>
-                <div className="group relative flex cursor-pointer flex-col items-center justify-center border-4 border-dashed border-border bg-background p-8 text-center transition-colors hover:bg-foreground/5 md:p-12">
+                <div className="group relative flex cursor-pointer flex-col items-center justify-center border border-dashed border-border bg-background p-8 text-center transition-colors hover:bg-foreground/5 md:p-12">
                   <input
                     id="pdf-upload"
                     type="file"
@@ -314,7 +314,7 @@ export default function SubmitWorkPage() {
         )}
 
         {errorMessage && (
-          <div className="flex items-center gap-3 border-4 border-red-500 bg-background p-4 text-sm font-bold text-red-500">
+          <div className="flex items-center gap-3 border border-red-500 bg-background p-4 text-sm font-bold text-red-500">
             <ShieldAlert size={20} className="flex-shrink-0" />
             <span className="break-words">{errorMessage}</span>
           </div>
@@ -329,7 +329,7 @@ export default function SubmitWorkPage() {
               (!isVisualArt && submissionMethod === 'editor' && (!content || content === '<p></p>')) ||
               (!isVisualArt && submissionMethod === 'pdf' && !file)
             }
-            className="flex w-full items-center justify-center gap-3 border-4 border-border bg-foreground px-6 py-4 text-sm font-bold tracking-widest text-background uppercase shadow-[4px_4px_0px_0px_var(--brutalist-shadow)] transition-all hover:-translate-y-1 hover:border-primary hover:bg-primary hover:shadow-[6px_6px_0px_0px_var(--brutalist-shadow)] disabled:opacity-50 md:px-8 md:py-5 md:text-base md:shadow-[6px_6px_0px_0px_var(--brutalist-shadow)] md:hover:shadow-[8px_8px_0px_0px_var(--brutalist-shadow)]"
+            className="flex w-full items-center justify-center gap-3 border border-border bg-foreground px-6 py-4 text-sm font-bold tracking-widest text-background uppercase shadow-2xl transition-all hover:-translate-y-1 hover:border-primary hover:bg-primary hover:shadow-2xl disabled:opacity-50 md:px-8 md:py-5 md:text-base md:shadow-2xl md:hover:shadow-2xl"
           >
             {status === 'uploading' ? (
               <>

@@ -1,8 +1,8 @@
-import { updateSession } from '@auibsal/auth/proxy';
+import { updateSession } from '@theideaiq/auth/proxy';
 import { NextRequest } from 'next/server';
 import createMiddleware from 'next-intl/middleware';
 import { routing } from '@/i18n/routing';
-import { env } from '@auibsal/env';
+import { env } from '@theideaiq/env';
 
 const intlMiddleware = createMiddleware(routing);
 

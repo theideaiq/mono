@@ -1,7 +1,7 @@
 'use client';
 
-import { createClient } from '@auibsal/auth/client';
-import type { JournalIssue } from '@auibsal/database/types';
+import { createClient } from '@theideaiq/auth/client';
+import type { JournalIssue } from '@theideaiq/database/types';
 import { AlertTriangle, ArrowRight, BookOpen, CheckSquare, FileUp } from 'lucide-react';
 import { useCallback, useEffect, useState } from 'react';
 
@@ -107,19 +107,19 @@ export default function JournalPage() {
           <div className="col-span-full flex items-center justify-center p-12">
             {/* CRITICAL FIX: Standardized Brutalist Loading State */}
             <div className="flex animate-pulse items-center gap-3 text-sm font-bold tracking-widest text-foreground/50 uppercase">
-              <div className="h-4 w-4 animate-spin rounded-none bg-primary"></div>
+              <div className="h-4 w-4 animate-spin rounded-2xl bg-primary"></div>
               Polling Journal Matrix...
             </div>
           </div>
         ) : issues.length === 0 ? (
-          <div className="col-span-full border-4 border-dashed border-border/30 p-12 text-center text-sm font-bold tracking-widest text-foreground/60 uppercase">
+          <div className="col-span-full border border-dashed border-border/30 p-12 text-center text-sm font-bold tracking-widest text-foreground/60 uppercase">
             No published issues found.
           </div>
         ) : (
           issues.map((iss) => (
             <div
               key={iss.id}
-              className="flex flex-col justify-between border-4 border-border bg-card p-8 text-foreground shadow-[8px_8px_0px_0px_var(--brutalist-shadow)] transition-all hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[12px_12px_0px_0px_var(--brutalist-shadow)]"
+              className="flex flex-col justify-between border border-border bg-card p-8 text-foreground shadow-2xl transition-all hover:-translate-x-1 hover:-translate-y-1 hover:shadow-2xl"
             >
               <div>
                 <div className="mb-6 flex items-start justify-between">
@@ -133,7 +133,7 @@ export default function JournalPage() {
                         : 'Unpublished'}
                     </p>
                   </div>
-                  <span className="border-2 border-transparent bg-foreground px-3 py-1.5 text-xs font-bold tracking-wider text-background uppercase">
+                  <span className="border border-transparent bg-foreground px-3 py-1.5 text-xs font-bold tracking-wider text-background uppercase">
                     {iss.published_at ? 'Published' : 'Draft'}
                   </span>
                 </div>
@@ -170,7 +170,7 @@ export default function JournalPage() {
       </div>
 
       {/* Upload/Creation Section */}
-      <div className="max-w-4xl border-4 border-border bg-card p-8 text-foreground shadow-[12px_12px_0px_0px_var(--brutalist-shadow)] md:p-12">
+      <div className="max-w-4xl border border-border bg-card p-8 text-foreground shadow-2xl md:p-12">
         <h3 className="mb-4 flex items-center gap-3 border-b-4 border-border pb-4 text-2xl font-bold tracking-widest uppercase">
           <BookOpen className="text-primary" />
           Publish New Issue
@@ -192,7 +192,7 @@ export default function JournalPage() {
                 min="1"
                 value={vol}
                 onChange={(e) => setVol(e.target.value)}
-                className="w-full rounded-none border-4 border-border bg-background p-4 font-bold text-foreground transition-colors focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
+                className="w-full rounded-2xl border border-border bg-background p-4 font-bold text-foreground transition-colors focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
               />
             </div>
             <div className="space-y-3">
@@ -205,7 +205,7 @@ export default function JournalPage() {
                 min="1"
                 value={issue}
                 onChange={(e) => setIssue(e.target.value)}
-                className="w-full rounded-none border-4 border-border bg-background p-4 font-bold text-foreground transition-colors focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
+                className="w-full rounded-2xl border border-border bg-background p-4 font-bold text-foreground transition-colors focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
               />
             </div>
             <div className="space-y-3">
@@ -217,7 +217,7 @@ export default function JournalPage() {
                 required
                 value={titleEn}
                 onChange={(e) => setTitleEn(e.target.value)}
-                className="w-full rounded-none border-4 border-border bg-background p-4 font-bold text-foreground transition-colors focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
+                className="w-full rounded-2xl border border-border bg-background p-4 font-bold text-foreground transition-colors focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
               />
             </div>
             <div className="space-y-3" dir="rtl">
@@ -232,7 +232,7 @@ export default function JournalPage() {
                 required
                 value={titleAr}
                 onChange={(e) => setTitleAr(e.target.value)}
-                className="w-full rounded-none border-4 border-border bg-background p-4 text-lg font-bold text-foreground transition-colors focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
+                className="w-full rounded-2xl border border-border bg-background p-4 text-lg font-bold text-foreground transition-colors focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
               />
             </div>
           </div>
@@ -241,7 +241,7 @@ export default function JournalPage() {
             <label htmlFor="slug" className="block text-sm font-bold tracking-wide uppercase">
               Compiled PDF File
             </label>
-            <div className="group relative flex cursor-pointer flex-col items-center justify-center border-4 border-dashed border-border bg-background p-8 text-center transition-colors hover:bg-foreground/5">
+            <div className="group relative flex cursor-pointer flex-col items-center justify-center border border-dashed border-border bg-background p-8 text-center transition-colors hover:bg-foreground/5">
               {/* CRITICAL FIX: The dynamic key mathematically guarantees the DOM input is destroyed and rebuilt when the state clears, preventing the Ghost Input trap. */}
               <input
                 key={file ? 'loaded' : 'empty'}
@@ -273,14 +273,14 @@ export default function JournalPage() {
           </div>
 
           {status === 'error' && errorMessage && (
-            <div className="flex items-center gap-3 border-4 border-red-500 bg-background p-4 text-sm font-bold text-red-500">
+            <div className="flex items-center gap-3 border border-red-500 bg-background p-4 text-sm font-bold text-red-500">
               <AlertTriangle size={20} className="flex-shrink-0" />
               <span className="break-words">{errorMessage}</span>
             </div>
           )}
 
           {status === 'success' && (
-            <div className="flex items-center gap-3 border-4 border-green-500 bg-background p-4 text-sm font-bold text-green-500">
+            <div className="flex items-center gap-3 border border-green-500 bg-background p-4 text-sm font-bold text-green-500">
               <CheckSquare size={20} className="flex-shrink-0" />
               <span>Issue successfully published!</span>
             </div>
@@ -290,11 +290,11 @@ export default function JournalPage() {
             <button
               type="submit"
               disabled={status === 'uploading' || !file}
-              className="flex items-center gap-3 border-4 border-border bg-foreground px-8 py-4 font-bold tracking-wider text-background uppercase shadow-[6px_6px_0px_0px_var(--brutalist-shadow)] transition-all hover:-translate-y-0.5 hover:border-primary hover:bg-primary hover:shadow-[8px_8px_0px_0px_var(--brutalist-shadow)] disabled:opacity-50"
+              className="flex items-center gap-3 border border-border bg-foreground px-8 py-4 font-bold tracking-wider text-background uppercase shadow-2xl transition-all hover:-translate-y-0.5 hover:border-primary hover:bg-primary hover:shadow-2xl disabled:opacity-50"
             >
               {/* CRITICAL FIX: Standardized Brutalist Uploading State */}
               {status === 'uploading' && (
-                <div className="h-4 w-4 animate-spin rounded-none bg-background"></div>
+                <div className="h-4 w-4 animate-spin rounded-2xl bg-background"></div>
               )}
               {status === 'uploading' ? 'Transmitting Payload...' : 'Publish Issue'}
             </button>

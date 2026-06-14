@@ -1,12 +1,12 @@
 'use client';
 
-import { createClient } from '@auibsal/auth/client';
-import type { BlogPost } from '@auibsal/database/types';
+import { createClient } from '@theideaiq/auth/client';
+import type { BlogPost } from '@theideaiq/database/types';
 import { AlertTriangle, Plus, X } from 'lucide-react';
 import { useCallback, useEffect, useState } from 'react';
 
 // INJECTING THE TYPOGRAPHICAL ENGINE
-import { SinglePlayerEditor } from '@auibsal/editor/single-player';
+import { SinglePlayerEditor } from '@theideaiq/editor/single-player';
 
 // Strictly define the shape of the Supabase relational join
 type CMSPostRecord = Pick<BlogPost, 'id' | 'title_en' | 'title_ar'> & {
@@ -116,7 +116,7 @@ export default function BlogPage() {
         <button
           type="button"
           onClick={showForm ? handleCancel : () => setShowForm(true)}
-          className={`flex items-center gap-2 border-4 border-border px-6 py-2 font-bold tracking-wider uppercase shadow-[6px_6px_0px_0px_var(--brutalist-shadow)] transition-all hover:-translate-y-0.5 hover:shadow-[8px_8px_0px_0px_var(--brutalist-shadow)] ${
+          className={`flex items-center gap-2 border border-border px-6 py-2 font-bold tracking-wider uppercase shadow-2xl transition-all hover:-translate-y-0.5 hover:shadow-2xl ${
             showForm
               ? 'bg-background text-foreground hover:border-primary hover:text-primary'
               : 'bg-primary text-background hover:bg-background hover:text-primary'
@@ -129,7 +129,7 @@ export default function BlogPage() {
 
       {/* Brutalist Data Table */}
       {!showForm && (
-        <div className="mb-12 overflow-x-auto border-4 border-border bg-card text-foreground shadow-[12px_12px_0px_0px_var(--brutalist-shadow)]">
+        <div className="mb-12 overflow-x-auto border border-border bg-card text-foreground shadow-2xl">
           <table className="w-full border-collapse text-left">
             <thead className="border-b-4 border-border bg-foreground text-background">
               <tr>
@@ -147,7 +147,7 @@ export default function BlogPage() {
                   <td colSpan={4} className="p-8">
                     {/* CRITICAL FIX: Standardized Brutalist Loading State */}
                     <div className="flex animate-pulse items-center justify-center gap-3 text-sm font-bold tracking-widest text-foreground/50 uppercase">
-                      <div className="h-4 w-4 animate-spin rounded-none bg-primary"></div>
+                      <div className="h-4 w-4 animate-spin rounded-2xl bg-primary"></div>
                       Polling CMS Database...
                     </div>
                   </td>
@@ -170,7 +170,7 @@ export default function BlogPage() {
                       {post.users?.full_name || 'Unknown Author'}
                     </td>
                     <td className="px-6 py-4 text-right text-sm">
-                      <span className="border-2 border-primary bg-primary/10 px-3 py-1.5 text-xs font-bold tracking-wider text-primary uppercase shadow-[2px_2px_0px_0px_var(--primary)]">
+                      <span className="border border-primary bg-primary/10 px-3 py-1.5 text-xs font-bold tracking-wider text-primary uppercase shadow-2xl">
                         Published
                       </span>
                     </td>
@@ -184,13 +184,13 @@ export default function BlogPage() {
 
       {/* Draft Post Form */}
       {showForm && (
-        <div className="max-w-6xl border-4 border-border bg-card p-8 text-foreground shadow-[12px_12px_0px_0px_var(--brutalist-shadow)] md:p-12">
+        <div className="max-w-6xl border border-border bg-card p-8 text-foreground shadow-2xl md:p-12">
           <h3 className="mb-8 border-b-4 border-border pb-4 text-2xl font-bold tracking-widest uppercase">
             Draft New Post
           </h3>
 
           {errorMessage && (
-            <div className="mb-8 flex items-center gap-3 border-4 border-red-500 bg-background p-4 text-sm font-bold text-red-500">
+            <div className="mb-8 flex items-center gap-3 border border-red-500 bg-background p-4 text-sm font-bold text-red-500">
               <AlertTriangle size={20} className="flex-shrink-0" />
               <span className="break-words">{errorMessage}</span>
             </div>
@@ -207,7 +207,7 @@ export default function BlogPage() {
               type="text"
               value={slug}
               onChange={(e) => setSlug(e.target.value)}
-              className="w-full rounded-none border-4 border-border bg-background p-4 font-mono text-sm text-foreground transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none md:w-1/2"
+              className="w-full rounded-2xl border border-border bg-background p-4 font-mono text-sm text-foreground transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none md:w-1/2"
             />
           </div>
 
@@ -226,7 +226,7 @@ export default function BlogPage() {
                   required
                   value={titleEn}
                   onChange={(e) => setTitleEn(e.target.value)}
-                  className="w-full rounded-none border-4 border-border bg-background p-4 font-bold text-foreground transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
+                  className="w-full rounded-2xl border border-border bg-background p-4 font-bold text-foreground transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
                 />
               </div>
               <div>
@@ -254,7 +254,7 @@ export default function BlogPage() {
                   required
                   value={titleAr}
                   onChange={(e) => setTitleAr(e.target.value)}
-                  className="w-full rounded-none border-4 border-border bg-background p-4 font-bold text-foreground transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
+                  className="w-full rounded-2xl border border-border bg-background p-4 font-bold text-foreground transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
                 />
               </div>
               <div>
@@ -274,9 +274,9 @@ export default function BlogPage() {
               type="button"
               disabled={isSaving}
               onClick={handleSave}
-              className="flex items-center gap-3 border-4 border-border bg-foreground px-8 py-4 font-bold tracking-wider text-background uppercase shadow-[6px_6px_0px_0px_var(--brutalist-shadow)] transition-all hover:-translate-y-1 hover:border-primary hover:bg-primary hover:shadow-[8px_8px_0px_0px_var(--brutalist-shadow)] disabled:opacity-50"
+              className="flex items-center gap-3 border border-border bg-foreground px-8 py-4 font-bold tracking-wider text-background uppercase shadow-2xl transition-all hover:-translate-y-1 hover:border-primary hover:bg-primary hover:shadow-2xl disabled:opacity-50"
             >
-              {isSaving && <div className="h-4 w-4 animate-spin rounded-none bg-background"></div>}
+              {isSaving && <div className="h-4 w-4 animate-spin rounded-2xl bg-background"></div>}
               {isSaving ? 'Transmitting Payload...' : 'Publish Post'}
             </button>
           </div>

@@ -1,4 +1,4 @@
-import { createClient } from '@auibsal/auth/server';
+import { createClient } from '@theideaiq/auth/server';
 import { ArrowRight, User } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
@@ -53,11 +53,11 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: '
         ) : (
           blogPosts.map((post) => (
             <Link key={post.id} href={`/blog/${post.slug}`} className="group h-full">
-              <article className="flex h-full flex-col border-4 border-border bg-card shadow-[8px_8px_0px_0px_var(--brutalist-shadow)] transition-all duration-200 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[12px_12px_0px_0px_var(--brutalist-shadow)]">
+              <article className="flex h-full flex-col border border-border bg-card shadow-2xl transition-all duration-200 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-2xl">
                 <div className="flex flex-1 flex-col p-8">
                   {/* Brutalist Author Block */}
                   <div className="mb-8 flex items-center gap-4 border-b-2 border-border pb-6">
-                    <div className="flex h-12 w-12 items-center justify-center border-2 border-transparent bg-foreground font-bold text-background">
+                    <div className="flex h-12 w-12 items-center justify-center border border-transparent bg-foreground font-bold text-background">
                       <User size={24} />
                     </div>
                     <div>

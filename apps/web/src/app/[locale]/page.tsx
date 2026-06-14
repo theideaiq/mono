@@ -1,7 +1,7 @@
-import { buttonVariants } from '@auibsal/ui/components/ui/button';
+import { buttonVariants } from '@theideaiq/ui/components/ui/button';
 import { ShoppingBag, Sparkles, ArrowRight } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
-import { env } from '@auibsal/env';
+import { env } from '@theideaiq/env';
 
 export default async function Home({ params }: { params: Promise<{ locale: 'en' | 'ar' }> }) {
   const { locale } = await params;

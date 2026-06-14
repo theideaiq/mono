@@ -1,4 +1,4 @@
-# @auibsal/database
+# @theideaiq/database
 
 Centralized Supabase schema and types.
 

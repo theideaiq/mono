@@ -1,8 +1,8 @@
-import { createClient } from '@auibsal/auth/server';
+import { createClient } from '@theideaiq/auth/server';
 
 import { Activity, Calendar, FileText, Users } from 'lucide-react';
 import { headers } from 'next/headers';
-import { env } from '@auibsal/env';
+import { env } from '@theideaiq/env';
 
 /**
  * dynamic
@@ -29,7 +29,7 @@ export default async function NexusHome() {
   const isEditor = role === 'editor' || role === 'admin';
 
   // CRITICAL FIX: Calculate the true Nexus base URL from the incoming request headers
-  // This guarantees the ICS link will perfectly match localhost:3001 in dev, and nexus.auibsal.org in production
+  // This guarantees the ICS link will perfectly match localhost:3001 in dev, and nexus.theideaiq.com in production
   const host = headersList.get('x-forwarded-host') || headersList.get('host') || 'localhost:3001';
   const proto = headersList.get('x-forwarded-proto') || 'http';
   const nexusUrl = env.NEXT_PUBLIC_NEXUS_URL;
@@ -82,7 +82,7 @@ export default async function NexusHome() {
             </h2>
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            <div className="flex flex-col border-4 border-border bg-card p-8 shadow-[8px_8px_0px_0px_var(--brutalist-shadow)] transition-all hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[12px_12px_0px_0px_var(--brutalist-shadow)]">
+            <div className="flex flex-col border border-border bg-card p-8 shadow-2xl transition-all hover:-translate-x-1 hover:-translate-y-1 hover:shadow-2xl">
               <div className="mb-4 flex items-start justify-between">
                 <h3 className="text-lg font-bold tracking-wide text-foreground uppercase">
                   Pending Submissions
@@ -94,7 +94,7 @@ export default async function NexusHome() {
               </p>
             </div>
 
-            <div className="flex flex-col border-4 border-border bg-card p-8 shadow-[8px_8px_0px_0px_var(--brutalist-shadow)] transition-all hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[12px_12px_0px_0px_var(--brutalist-shadow)]">
+            <div className="flex flex-col border border-border bg-card p-8 shadow-2xl transition-all hover:-translate-x-1 hover:-translate-y-1 hover:shadow-2xl">
               <div className="mb-4 flex items-start justify-between">
                 <h3 className="text-lg font-bold tracking-wide text-foreground uppercase">
                   Active Members
@@ -104,7 +104,7 @@ export default async function NexusHome() {
               <p className="mt-auto text-5xl font-black text-foreground">{activeMembersCount}</p>
             </div>
 
-            <div className="flex flex-col border-4 border-border bg-card p-8 shadow-[8px_8px_0px_0px_var(--brutalist-shadow)] transition-all hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[12px_12px_0px_0px_var(--brutalist-shadow)]">
+            <div className="flex flex-col border border-border bg-card p-8 shadow-2xl transition-all hover:-translate-x-1 hover:-translate-y-1 hover:shadow-2xl">
               <div className="mb-4 flex items-start justify-between">
                 <h3 className="text-lg font-bold tracking-wide text-foreground uppercase">
                   Upcoming Events
@@ -124,7 +124,7 @@ export default async function NexusHome() {
           </h2>
         </div>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-          <div className="border-4 border-border bg-card p-8 shadow-[8px_8px_0px_0px_var(--brutalist-shadow)]">
+          <div className="border border-border bg-card p-8 shadow-2xl">
             <h3 className="mb-6 text-xl font-bold tracking-wide text-foreground uppercase">
               My Submissions
             </h3>
@@ -133,7 +133,7 @@ export default async function NexusHome() {
                 {memberSubmissions.map((sub) => (
                   <li
                     key={sub.id}
-                    className="group border-2 border-border p-4 transition-colors hover:border-primary"
+                    className="group border border-border p-4 transition-colors hover:border-primary"
                   >
                     <p className="mb-2 truncate text-lg font-bold text-foreground uppercase">
                       {sub.title}
@@ -144,7 +144,7 @@ export default async function NexusHome() {
                         {sub.type}
                       </span>
                       <span
-                        className={`border-2 px-3 py-1 text-xs tracking-widest uppercase ${sub.status === 'approved' ? 'border-foreground bg-foreground text-background' : 'border-border bg-card text-foreground'}`}
+                        className={`border px-3 py-1 text-xs tracking-widest uppercase ${sub.status === 'approved' ? 'border-foreground bg-foreground text-background' : 'border-border bg-card text-foreground'}`}
                       >
                         {sub.status}
                       </span>
@@ -153,7 +153,7 @@ export default async function NexusHome() {
                 ))}
               </ul>
             ) : (
-              <div className="border-2 border-dashed border-foreground/30 p-8 text-center">
+              <div className="border border-dashed border-foreground/30 p-8 text-center">
                 <p className="text-sm font-bold tracking-widest text-foreground/70 uppercase">
                   You have no active submissions.
                 </p>
@@ -161,7 +161,7 @@ export default async function NexusHome() {
             )}
           </div>
 
-          <div className="h-fit border-4 border-border bg-foreground p-8 text-background shadow-[8px_8px_0px_0px_var(--brutalist-shadow)]">
+          <div className="h-fit border border-border bg-foreground p-8 text-background shadow-2xl">
             <h3 className="mb-6 text-xl font-bold tracking-wide text-background uppercase">
               Account Status
             </h3>
@@ -188,7 +188,7 @@ export default async function NexusHome() {
                       type="text"
                       readOnly
                       value={`${nexusUrl}/api/calendar/${calendarToken}/events.ics`}
-                      className="w-full truncate border-2 border-background/30 bg-background/10 p-3 font-mono text-xs text-background focus:border-primary focus:outline-none"
+                      className="w-full truncate border border-background/30 bg-background/10 p-3 font-mono text-xs text-background focus:border-primary focus:outline-none"
                     />
                   </div>
                 </div>

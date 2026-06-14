@@ -1,7 +1,7 @@
-import { verifyWaylWebhookSignature } from '@auibsal/payments/wayl/webhooks';
+import { verifyWaylWebhookSignature } from '@theideaiq/payments/wayl/webhooks';
 // 1. CRITICAL FIX: Import the Admin Client
-import { createAdminClient } from '@auibsal/auth/admin'; 
-import { env } from '@auibsal/env';
+import { createAdminClient } from '@theideaiq/auth/admin';
+import { env } from '@theideaiq/env';
 
 export async function POST(req: Request) {
   try {

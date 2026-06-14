@@ -1,4 +1,4 @@
-import { updateSession } from '@auibsal/auth/proxy';
+import { updateSession } from '@theideaiq/auth/proxy';
 import { type NextRequest, NextResponse } from 'next/server';
 
 // NEXT.JS REQUIREMENT: The function must be exported as the default middleware

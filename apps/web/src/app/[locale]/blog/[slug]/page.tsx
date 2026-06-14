@@ -1,4 +1,4 @@
-import { createClient } from '@auibsal/auth/server';
+import { createClient } from '@theideaiq/auth/server';
 import DOMPurify from 'isomorphic-dompurify';
 import { ArrowLeft, User } from 'lucide-react';
 import type { Metadata } from 'next';
@@ -38,9 +38,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: title,
-    description: `Read "${title}" by ${authorName} on the AUIB Society of Arts and Letters Blog.`,
+    description: `Read "${title}" by ${authorName} on the The IDEA IQ Inc. Blog.`,
     openGraph: {
-      title: `${title} | AUIB SAL Blog`,
+      title: `${title} | The IDEA IQ SAL Blog`,
       description: `An article by ${authorName}.`,
       type: 'article',
     },
@@ -92,7 +92,7 @@ export default async function BlogPostPage({ params }: Props) {
         </h1>
 
         <div className="flex items-center gap-4">
-          <div className="flex h-12 w-12 items-center justify-center border-2 border-transparent bg-foreground font-bold text-background">
+          <div className="flex h-12 w-12 items-center justify-center border border-transparent bg-foreground font-bold text-background">
             <User size={24} />
           </div>
           <div>

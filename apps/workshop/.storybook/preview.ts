@@ -1,6 +1,6 @@
 import type { Preview } from '@storybook/react';
 // Import the compiled CSS from your UI package
-import '@auibsal/ui/styles/globals.css'; 
+import '@theideaiq/ui/styles/globals.css';
 
 const preview: Preview = {
   parameters: {

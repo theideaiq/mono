@@ -74,7 +74,7 @@ export function Navbar({
         <button
           type="button"
           onClick={onSignOut}
-          className="text-sm font-bold tracking-widest text-white uppercase transition-colors hover:text-auib-charcoal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-auib-red rounded-sm"
+          className="text-sm font-bold tracking-widest text-white uppercase transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary rounded-2xl"
         >
           Sign Out
         </button>
@@ -87,7 +87,7 @@ export function Navbar({
           <button
             type="button"
             onClick={onLanguageToggle}
-            className="text-sm font-bold tracking-widest text-white uppercase transition-colors hover:text-auib-charcoal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-auib-red rounded-sm"
+            className="text-sm font-bold tracking-widest text-white uppercase transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary rounded-2xl"
           >
             {targetLocale === 'en' ? 'English' : 'عربي'}
           </button>
@@ -95,7 +95,7 @@ export function Navbar({
           {nexusUrl && (
             <a
               href={nexusUrl}
-              className="text-sm font-bold tracking-widest text-white uppercase transition-colors hover:text-auib-charcoal"
+              className="text-sm font-bold tracking-widest text-white uppercase transition-colors hover:text-foreground"
             >
               Nexus
             </a>
@@ -112,7 +112,7 @@ export function Navbar({
   return (
     <nav
       dir="auto"
-      className="sticky top-0 z-50 w-full border-b-4 border-auib-charcoal bg-auib-red text-white transition-colors duration-300"
+      className="sticky top-0 z-50 w-full border-b-4 border-border bg-primary text-white transition-colors duration-300"
     >
       <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-6">
         <Link
@@ -131,7 +131,7 @@ export function Navbar({
             onClick={() => setIsOpen(!isOpen)}
             aria-expanded={isOpen}
             aria-label="Toggle navigation menu"
-            className="flex items-center gap-2 border-2 border-transparent p-2 text-sm font-bold tracking-widest uppercase transition-colors hover:border-white hover:bg-white hover:text-auib-red focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-auib-red"
+            className="flex items-center gap-2 border border-transparent p-2 text-sm font-bold tracking-widest uppercase transition-colors hover:border-white hover:bg-white hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
           >
             {isOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
             <span className="hidden sm:inline">Menu</span>
@@ -142,7 +142,7 @@ export function Navbar({
       {/* Hamburger Menu Overlay */}
       {isOpen && (
         // 2. Swapped left-0 to inset-x-0 for flawless BiDi absolute positioning
-        <div className="absolute top-20 inset-x-0 h-[calc(100vh-5rem)] w-full overflow-y-auto border-b-4 border-auib-red bg-auib-charcoal text-white shadow-brutalist-md">
+        <div className="absolute top-20 inset-x-0 h-[calc(100vh-5rem)] w-full overflow-y-auto border-b-4 border-primary bg-brand-dark text-white shadow-xl">
           <div className="mx-auto max-w-6xl px-6 py-8">
             <ul className="flex flex-col gap-4 text-lg font-bold tracking-widest uppercase">
               {links.map((link) => (
@@ -150,7 +150,7 @@ export function Navbar({
                   <Link
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="block py-2 transition-transform duration-200 hover:translate-x-2 hover:text-auib-red rtl:hover:-translate-x-2"
+                    className="block py-2 transition-transform duration-200 hover:translate-x-2 hover:text-primary rtl:hover:-translate-x-2"
                   >
                     {link.label}
                   </Link>

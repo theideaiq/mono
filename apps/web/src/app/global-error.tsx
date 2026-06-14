@@ -1,14 +1,14 @@
 'use client';
 
 // 1. Synchronized with the named export standard of the UI package
-import { InteractiveErrorState } from '@auibsal/ui/components/InteractiveErrorState';
+import { InteractiveErrorState } from '@theideaiq/ui/components/InteractiveErrorState';
 import { ubuntu, ubuntuArabic } from '@/fonts/fonts';
 
 import './globals.css'; // Path adjusted for the root app directory
 
 export default function GlobalError({ reset }: { reset: () => void }) {
   return (
-    // Re-injecting the AUIB font variables directly into the fallback HTML
+    // Re-injecting the The IDEA IQ font variables directly into the fallback HTML
     <html lang="en" className={`${ubuntu.variable} ${ubuntuArabic.variable}`}>
       {/* Re-injecting the semantic dark-mode compatible background tokens */}
       <body className="flex min-h-screen flex-col overflow-x-hidden bg-background font-sans text-foreground antialiased">

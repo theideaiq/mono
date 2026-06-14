@@ -1,5 +1,5 @@
 {
-  "name": "@auibsal/auth",
+  "name": "@theideaiq/auth",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -15,8 +15,8 @@
     "clean": "rm -rf dist .turbo node_modules"
   },
   "dependencies": {
-    "@auibsal/database": "workspace:*",
-    "@auibsal/env": "workspace:*",
+    "@theideaiq/database": "workspace:*",
+    "@theideaiq/env": "workspace:*",
     "@supabase/ssr": "^0.12.0",
     "@supabase/supabase-js": "catalog:"
   },
@@ -24,7 +24,7 @@
     "next": "catalog:"
   },
   "devDependencies": {
-    "@auibsal/config": "workspace:*",
+    "@theideaiq/config": "workspace:*",
     "@types/node": "catalog:",
     "client-only": "catalog:",
     "server-only": "catalog:",

@@ -65,7 +65,7 @@ export function SinglePlayerEditor({ content, onChange }: SinglePlayerEditorProp
     },
     editorProps: {
       attributes: {
-        class: 'prose prose-black max-w-none focus:outline-none min-h-[400px] border-4 border-black p-4 font-serif',
+        class: 'prose prose-black max-w-none focus:outline-none min-h-[400px] border border-black p-4 font-serif',
       },
     },
   });
@@ -73,7 +73,7 @@ export function SinglePlayerEditor({ content, onChange }: SinglePlayerEditorProp
   if (!editor) return null;
 
   return (
-    <div className="relative border-4 border-black p-4 bg-white w-full max-w-full">
+    <div className="relative border border-black p-4 bg-white w-full max-w-full">
       <EditorToolbar editor={editor} />
       
       <EditorContent editor={editor} className="editor mt-4" />

@@ -1,11 +1,11 @@
 import 'server-only';
 
-import type { Database } from '@auibsal/database/types';
+import type { Database } from '@theideaiq/database/types';
 
 import { createServerClient } from '@supabase/ssr';
 import type { AuthError, SupabaseClient, User } from '@supabase/supabase-js';
 import { type NextRequest, NextResponse } from 'next/server';
-import { env } from '@auibsal/env';
+import { env } from '@theideaiq/env';
 
 // Explicitly type the return signature so the consuming middleware has perfect intellisense
 export async function updateSession(request: NextRequest): Promise<{

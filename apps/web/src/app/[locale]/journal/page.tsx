@@ -1,4 +1,4 @@
-import { createClient } from '@auibsal/auth/server';
+import { createClient } from '@theideaiq/auth/server';
 import { ArrowRight } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
@@ -58,13 +58,13 @@ export default async function Journal({ params }: { params: Promise<{ locale: 'e
           publishedIssues.map((issue) => (
             <Link key={issue.id} href={`/journal/${issue.id}`} className="group block">
               {/* Replaced hardcoded hexes with semantic tokens for seamless dark mode compatibility */}
-              <article className="relative overflow-hidden border-4 border-border bg-card p-10 shadow-[8px_8px_0px_0px_var(--brutalist-shadow)] transition-all duration-200 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[12px_12px_0px_0px_var(--brutalist-shadow)] md:p-14">
+              <article className="relative overflow-hidden border border-border bg-card p-10 shadow-2xl transition-all duration-200 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-2xl md:p-14">
                 {/* Hover Accent mapped to the primary brand color */}
                 <div className="absolute top-0 left-0 h-full w-2 origin-top scale-y-0 bg-primary transition-transform duration-200 group-hover:scale-y-100 rtl:right-0 rtl:left-auto"></div>
 
                 <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-center">
                   {/* Dark contrasting tag using foreground background and background text */}
-                  <span className="inline-block w-fit border-2 border-transparent bg-foreground px-4 py-2 text-xs font-bold tracking-widest text-background uppercase">
+                  <span className="inline-block w-fit border border-transparent bg-foreground px-4 py-2 text-xs font-bold tracking-widest text-background uppercase">
                     Vol. {issue.volume_number}, Issue {issue.issue_number}
                   </span>
                   <span className="text-sm font-bold tracking-widest text-foreground/80 uppercase">

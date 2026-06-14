@@ -65,7 +65,7 @@ export function MultiplayerEditor() {
     ] as any[], // <--- CRITICAL FIX: Bypass exactOptionalPropertyTypes collision
     editorProps: {
       attributes: {
-        class: 'prose prose-black max-w-none focus:outline-none min-h-[500px] border-4 border-black p-4 font-serif',
+        class: 'prose prose-black max-w-none focus:outline-none min-h-[500px] border border-black p-4 font-serif',
       },
     },
   });
@@ -73,7 +73,7 @@ export function MultiplayerEditor() {
   if (!editor) return null;
 
   return (
-    <div className="relative border-4 border-black p-4 bg-white min-h-[600px] w-full max-w-[800px] mx-auto">
+    <div className="relative border border-black p-4 bg-white min-h-[600px] w-full max-w-[800px] mx-auto">
       <EditorToolbar editor={editor} />
       
       {/* The main typing surface */}

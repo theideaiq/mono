@@ -1,5 +1,5 @@
 // 1. Import the centralized Toaster for global notifications
-import { Toaster } from '@auibsal/ui/components/ui/sonner';
+import { Toaster } from '@theideaiq/ui/components/ui/sonner';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
@@ -12,14 +12,14 @@ import { routing } from '@/i18n/routing';
 
 import '../globals.css';
 
-import { constructMetadata } from '@auibsal/seo/metadata';
+import { constructMetadata } from '@theideaiq/seo/metadata';
 
 /**
  * metadata
  *
  * @description Standardized execution for metadata.
  */
-export const metadata: Metadata = constructMetadata({ title: "AUIB Society of Arts and Letters", description: "Official portal for the Society of Arts and Letters at the American University of Iraq Baghdad." });
+export const metadata: Metadata = constructMetadata({ title: "The IDEA IQ Inc.", description: "Official portal for the Society of Arts and Letters at the American University of Iraq Baghdad." });
 
 
 export default async function LocaleLayout({

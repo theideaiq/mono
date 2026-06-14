@@ -1,5 +1,5 @@
 {
-  "name": "@auibsal/ui",
+  "name": "@theideaiq/ui",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -40,7 +40,7 @@
     "react-dom": "catalog:"
   },
   "devDependencies": {
-    "@auibsal/config": "workspace:*",
+    "@theideaiq/config": "workspace:*",
     "@tailwindcss/postcss": "catalog:",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
@@ -51,6 +51,6 @@
     "typescript": "catalog:",
     "vitest": "catalog:",
     "@testing-library/jest-dom": "^6.9.1",
-    "@auibsal/testing": "workspace:*"
+    "@theideaiq/testing": "workspace:*"
   }
 }

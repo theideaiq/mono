@@ -1,7 +1,7 @@
 'use client';
 
-import { createClient } from '@auibsal/auth/client';
-import type { Event } from '@auibsal/database/types';
+import { createClient } from '@theideaiq/auth/client';
+import type { Event } from '@theideaiq/database/types';
 import { AlertCircle, AlertTriangle, CalendarDays, X } from 'lucide-react';
 import { useCallback, useEffect, useState } from 'react';
 
@@ -51,14 +51,14 @@ export default function EventsPage() {
 
   const fetchAuibEvents = useCallback(async () => {
     try {
-      const res = await fetch('/api/auib-events');
+      const res = await fetch('/api/theideaiq-events');
       if (res.ok) {
         const data = await res.json();
         // Type cast the validated payload
         setAuibEvents(data as AuibEvent[]);
       }
     } catch (e) {
-      console.error('Failed to fetch auib events proxy', e);
+      console.error('Failed to fetch theideaiq events proxy', e);
     }
   }, []);
 
@@ -127,7 +127,7 @@ export default function EventsPage() {
         <button
           type="button"
           onClick={() => setShowModal(true)}
-          className="border-4 border-border bg-primary px-6 py-2 font-bold tracking-wider text-background uppercase shadow-[6px_6px_0px_0px_var(--brutalist-shadow)] transition-colors hover:-translate-y-0.5 hover:bg-background hover:text-primary hover:shadow-[8px_8px_0px_0px_var(--brutalist-shadow)]"
+          className="border border-border bg-primary px-6 py-2 font-bold tracking-wider text-background uppercase shadow-2xl transition-colors hover:-translate-y-0.5 hover:bg-background hover:text-primary hover:shadow-2xl"
         >
           New Event
         </button>
@@ -140,7 +140,7 @@ export default function EventsPage() {
             <CalendarDays className="text-primary" />
             Society Events
           </h3>
-          <div className="overflow-x-auto border-4 border-border bg-card text-foreground shadow-[8px_8px_0px_0px_var(--brutalist-shadow)]">
+          <div className="overflow-x-auto border border-border bg-card text-foreground shadow-2xl">
             <table className="w-full border-collapse text-left">
               <thead className="border-b-4 border-border bg-foreground text-background">
                 <tr>
@@ -157,7 +157,7 @@ export default function EventsPage() {
                     <td className="p-8" colSpan={3}>
                       {/* CRITICAL FIX: Standardized Brutalist Loading State */}
                       <div className="flex animate-pulse items-center justify-center gap-3 text-sm font-bold tracking-widest text-foreground/50 uppercase">
-                        <div className="h-4 w-4 animate-spin rounded-none bg-primary"></div>
+                        <div className="h-4 w-4 animate-spin rounded-2xl bg-primary"></div>
                         Polling Database...
                       </div>
                     </td>
@@ -180,11 +180,11 @@ export default function EventsPage() {
                       </td>
                       <td className="px-6 py-4 text-sm font-bold">
                         {event.is_members_only ? (
-                          <span className="border-2 border-border bg-foreground px-3 py-1.5 text-xs tracking-wider text-background uppercase shadow-[2px_2px_0px_0px_var(--brutalist-shadow)]">
+                          <span className="border border-border bg-foreground px-3 py-1.5 text-xs tracking-wider text-background uppercase shadow-2xl">
                             Yes
                           </span>
                         ) : (
-                          <span className="border-2 border-border bg-card px-3 py-1.5 text-xs tracking-wider text-foreground uppercase shadow-[2px_2px_0px_0px_var(--brutalist-shadow)]">
+                          <span className="border border-border bg-card px-3 py-1.5 text-xs tracking-wider text-foreground uppercase shadow-2xl">
                             No
                           </span>
                         )}
@@ -197,16 +197,16 @@ export default function EventsPage() {
           </div>
         </div>
 
-        {/* AUIB Calendar Overlay */}
+        {/* The IDEA IQ Calendar Overlay */}
         <div>
           <h3 className="mb-2 flex items-center gap-3 text-xl font-bold tracking-wide text-foreground uppercase">
             <AlertCircle className="text-primary" />
-            AUIB Academic Calendar
+            The IDEA IQ Academic Calendar
           </h3>
           <p className="mb-6 text-sm font-bold tracking-widest text-foreground/60 uppercase">
             Check for conflicts before scheduling.
           </p>
-          <div className="max-h-[600px] overflow-hidden overflow-y-auto border-4 border-primary bg-card text-foreground shadow-[8px_8px_0px_0px_var(--primary)]">
+          <div className="max-h-[600px] overflow-hidden overflow-y-auto border border-primary bg-card text-foreground shadow-2xl">
             <ul className="divide-y-2 divide-primary/20">
               {auibEvents.slice(0, 10).map((evt) => (
                 <li key={evt.id} className="p-5 transition-colors hover:bg-primary/5">
@@ -231,7 +231,7 @@ export default function EventsPage() {
       {/* Brutalist Creation Modal */}
       {showModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/90 p-4 backdrop-blur-sm">
-          <div className="relative max-h-[90vh] w-full max-w-3xl overflow-y-auto border-4 border-border bg-card p-8 text-foreground shadow-[16px_16px_0px_0px_var(--primary)] md:p-12">
+          <div className="relative max-h-[90vh] w-full max-w-3xl overflow-y-auto border border-border bg-card p-8 text-foreground shadow-2xl md:p-12">
             <button
               type="button"
               onClick={handleCloseModal}
@@ -246,7 +246,7 @@ export default function EventsPage() {
             </h3>
 
             {errorMessage && (
-              <div className="mb-8 flex items-center gap-3 border-4 border-red-500 bg-background p-4 text-sm font-bold text-red-500">
+              <div className="mb-8 flex items-center gap-3 border border-red-500 bg-background p-4 text-sm font-bold text-red-500">
                 <AlertTriangle size={20} className="flex-shrink-0" />
                 <span className="break-words">{errorMessage}</span>
               </div>
@@ -267,7 +267,7 @@ export default function EventsPage() {
                     type="text"
                     value={titleEn}
                     onChange={(e) => setTitleEn(e.target.value)}
-                    className="w-full rounded-none border-2 border-border bg-background p-4 text-lg font-bold text-foreground focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
+                    className="w-full rounded-2xl border border-border bg-background p-4 text-lg font-bold text-foreground focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
                   />
                 </div>
                 <div className="space-y-3" dir="rtl">
@@ -283,7 +283,7 @@ export default function EventsPage() {
                     type="text"
                     value={titleAr}
                     onChange={(e) => setTitleAr(e.target.value)}
-                    className="w-full rounded-none border-2 border-border bg-background p-4 text-lg font-bold text-foreground focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
+                    className="w-full rounded-2xl border border-border bg-background p-4 text-lg font-bold text-foreground focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
                   />
                 </div>
               </div>
@@ -301,7 +301,7 @@ export default function EventsPage() {
                     required
                     value={descEn}
                     onChange={(e) => setDescEn(e.target.value)}
-                    className="h-32 w-full resize-none rounded-none border-2 border-border bg-background p-4 leading-relaxed font-medium text-foreground focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
+                    className="h-32 w-full resize-none rounded-2xl border border-border bg-background p-4 leading-relaxed font-medium text-foreground focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
                   />
                 </div>
                 <div className="space-y-3" dir="rtl">
@@ -316,7 +316,7 @@ export default function EventsPage() {
                     required
                     value={descAr}
                     onChange={(e) => setDescAr(e.target.value)}
-                    className="h-32 w-full resize-none rounded-none border-2 border-border bg-background p-4 leading-relaxed font-medium text-foreground focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
+                    className="h-32 w-full resize-none rounded-2xl border border-border bg-background p-4 leading-relaxed font-medium text-foreground focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
                   />
                 </div>
               </div>
@@ -334,7 +334,7 @@ export default function EventsPage() {
                   type="text"
                   value={location}
                   onChange={(e) => setLocation(e.target.value)}
-                  className="w-full rounded-none border-2 border-border bg-background p-4 font-bold text-foreground focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
+                  className="w-full rounded-2xl border border-border bg-background p-4 font-bold text-foreground focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
                 />
               </div>
 
@@ -352,7 +352,7 @@ export default function EventsPage() {
                     type="datetime-local"
                     value={startsAt}
                     onChange={(e) => setStartsAt(e.target.value)}
-                    className="w-full rounded-none border-2 border-border bg-background p-4 text-sm font-bold text-foreground [color-scheme:light_dark] focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
+                    className="w-full rounded-2xl border border-border bg-background p-4 text-sm font-bold text-foreground [color-scheme:light_dark] focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
                   />
                 </div>
                 <div className="space-y-3">
@@ -368,7 +368,7 @@ export default function EventsPage() {
                     type="datetime-local"
                     value={endsAt}
                     onChange={(e) => setEndsAt(e.target.value)}
-                    className="w-full rounded-none border-2 border-border bg-background p-4 text-sm font-bold text-foreground [color-scheme:light_dark] focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
+                    className="w-full rounded-2xl border border-border bg-background p-4 text-sm font-bold text-foreground [color-scheme:light_dark] focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
                   />
                 </div>
               </div>
@@ -379,7 +379,7 @@ export default function EventsPage() {
                   id="membersOnly"
                   checked={isMembersOnly}
                   onChange={(e) => setIsMembersOnly(e.target.checked)}
-                  className="h-6 w-6 rounded-none border-2 border-border bg-background text-primary focus:ring-primary focus:ring-offset-0"
+                  className="h-6 w-6 rounded-2xl border border-border bg-background text-primary focus:ring-primary focus:ring-offset-0"
                 />
                 <label
                   htmlFor="membersOnly"
@@ -394,17 +394,17 @@ export default function EventsPage() {
                   type="button"
                   onClick={handleCloseModal}
                   disabled={isSaving}
-                  className="border-4 border-border px-8 py-4 font-bold tracking-widest text-foreground uppercase shadow-[6px_6px_0px_0px_var(--brutalist-shadow)] transition-colors hover:translate-x-1 hover:translate-y-1 hover:bg-foreground hover:text-background hover:shadow-none disabled:opacity-50"
+                  className="border border-border px-8 py-4 font-bold tracking-widest text-foreground uppercase shadow-2xl transition-colors hover:translate-x-1 hover:translate-y-1 hover:bg-foreground hover:text-background hover:shadow-none disabled:opacity-50"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={isSaving}
-                  className="flex items-center gap-3 border-4 border-border bg-primary px-8 py-4 font-bold tracking-widest text-background uppercase shadow-[6px_6px_0px_0px_var(--brutalist-shadow)] transition-colors hover:translate-x-1 hover:translate-y-1 hover:bg-foreground hover:shadow-none disabled:opacity-50"
+                  className="flex items-center gap-3 border border-border bg-primary px-8 py-4 font-bold tracking-widest text-background uppercase shadow-2xl transition-colors hover:translate-x-1 hover:translate-y-1 hover:bg-foreground hover:shadow-none disabled:opacity-50"
                 >
                   {isSaving && (
-                    <div className="h-4 w-4 animate-spin rounded-none bg-background"></div>
+                    <div className="h-4 w-4 animate-spin rounded-2xl bg-background"></div>
                   )}
                   {isSaving ? 'Creating...' : 'Create Event'}
                 </button>

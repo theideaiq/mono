@@ -1,7 +1,7 @@
 'use client';
 
 // 1. Synchronized with the named export standard of the UI package
-import { InteractiveErrorState } from '@auibsal/ui/components/InteractiveErrorState';
+import { InteractiveErrorState } from '@theideaiq/ui/components/InteractiveErrorState';
 
 import { useLocale, useTranslations } from 'next-intl';
 import { useEffect } from 'react';

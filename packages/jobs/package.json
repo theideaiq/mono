@@ -1,5 +1,5 @@
 {
-  "name": "@auibsal/jobs",
+  "name": "@theideaiq/jobs",
   "version": "1.0.0",
   "private": true,
   "main": "./src/index.ts",
@@ -9,11 +9,11 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@auibsal/env": "workspace:*",
+    "@theideaiq/env": "workspace:*",
     "@upstash/qstash": "^2.7.7"
   },
   "devDependencies": {
-    "@auibsal/config": "workspace:*",
+    "@theideaiq/config": "workspace:*",
     "typescript": "catalog:"
   }
 }

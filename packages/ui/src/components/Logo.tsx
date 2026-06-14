@@ -15,7 +15,7 @@ export function Logo({ locale, className }: LogoProps) {
   // Contiguous text for seamless screen reader parsing
   const srText =
     locale === 'en'
-      ? 'AUIB Society of Arts and Letters'
+      ? 'The IDEA IQ Inc.'
       : 'جمعية الفنون والآداب في الجامعة الأمريكية';
 
   return (
@@ -36,7 +36,7 @@ export function Logo({ locale, className }: LogoProps) {
       <div aria-hidden="true">
         {locale === 'en' ? (
           <span className="block leading-[1.1]">
-            AUIB
+            The IDEA IQ
             <br />
             Society of
             <br />

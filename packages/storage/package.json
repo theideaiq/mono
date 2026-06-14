@@ -1,5 +1,5 @@
 {
-  "name": "@auibsal/storage",
+  "name": "@theideaiq/storage",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -16,7 +16,7 @@
     "@supabase/supabase-js": "catalog:"
   },
   "devDependencies": {
-    "@auibsal/config": "workspace:*",
+    "@theideaiq/config": "workspace:*",
     "typescript": "catalog:"
   }
 }

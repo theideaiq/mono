@@ -1,6 +1,6 @@
-# AUIB SAL Web
+# The IDEA IQ SAL Web
 
-The public website for the AUIB Society of Arts and Letters.
+The public website for the The IDEA IQ Inc..
 
 ## Tech Stack
 - Next.js (App Router)

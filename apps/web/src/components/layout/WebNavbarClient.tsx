@@ -1,7 +1,7 @@
 'use client';
 
 // 1. Synchronized with the named export from the UI package
-import { Navbar } from '@auibsal/ui/components/layout/Navbar';
+import { Navbar } from '@theideaiq/ui/components/layout/Navbar';
 import { useSearchParams } from 'next/navigation';
 import { usePathname, useRouter } from '@/i18n/routing';
 

@@ -1,6 +1,6 @@
 'use client';
 
-import { createClient } from '@auibsal/auth/client';
+import { createClient } from '@theideaiq/auth/client';
 import { AlertTriangle } from 'lucide-react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
@@ -71,10 +71,10 @@ function LoginForm() {
           id="email"
           type="email"
           required
-          placeholder="member@auib.edu.iq"
+          placeholder="member@theideaiq.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full rounded-none border-4 border-border bg-background p-4 font-bold text-foreground placeholder-foreground/30 transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
+          className="w-full rounded-2xl border border-border bg-background p-4 font-bold text-foreground placeholder-foreground/30 transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
         />
       </div>
 
@@ -92,12 +92,12 @@ function LoginForm() {
           placeholder="••••••••"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full rounded-none border-4 border-border bg-background p-4 font-bold text-foreground placeholder-foreground/30 transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
+          className="w-full rounded-2xl border border-border bg-background p-4 font-bold text-foreground placeholder-foreground/30 transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
         />
       </div>
 
       {status === 'error' && (
-        <div className="flex items-center gap-3 border-4 border-red-500 bg-background p-4 text-sm font-bold text-red-500">
+        <div className="flex items-center gap-3 border border-red-500 bg-background p-4 text-sm font-bold text-red-500">
           <AlertTriangle size={20} />
           {errorMessage}
         </div>
@@ -107,7 +107,7 @@ function LoginForm() {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="w-full border-4 border-border bg-foreground p-4 font-bold tracking-widest text-background uppercase shadow-[6px_6px_0px_0px_var(--brutalist-shadow)] transition-all hover:-translate-y-1 hover:border-primary hover:bg-primary hover:shadow-[8px_8px_0px_0px_var(--brutalist-shadow)] disabled:opacity-50"
+        className="w-full border border-border bg-foreground p-4 font-bold tracking-widest text-background uppercase shadow-2xl transition-all hover:-translate-y-1 hover:border-primary hover:bg-primary hover:shadow-2xl disabled:opacity-50"
       >
         {status === 'loading' ? 'Authenticating...' : 'Authenticate'}
       </button>
@@ -128,7 +128,7 @@ export default function NexusLogin() {
   return (
     // Outer shell anchored to background, inner container anchored to card
     <div className="flex min-h-screen items-center justify-center bg-background p-6 font-sans">
-      <div className="w-full max-w-xl border-4 border-border bg-card shadow-[16px_16px_0px_0px_var(--brutalist-shadow)]">
+      <div className="w-full max-w-xl border border-border bg-card shadow-2xl">
         <div className="p-8 md:p-12">
           <h1 className="mb-4 border-b-4 border-border pb-4 text-4xl font-black tracking-tighter text-foreground uppercase">
             Nexus Gateway

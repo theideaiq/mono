@@ -1,7 +1,7 @@
 'use client';
 
-import { createClient } from '@auibsal/auth/client';
-import type { Tables } from '@auibsal/database/types';
+import { createClient } from '@theideaiq/auth/client';
+import type { Tables } from '@theideaiq/database/types';
 import { AlertTriangle, RefreshCw, ShieldCheck, Terminal } from 'lucide-react';
 import { useCallback, useEffect, useState } from 'react';
 
@@ -71,7 +71,7 @@ export default function LogsPage() {
           type="button"
           onClick={fetchLogs}
           disabled={status === 'loading'}
-          className="flex items-center gap-2 border-2 border-border bg-card px-4 py-2 text-sm font-bold tracking-widest text-foreground uppercase shadow-[4px_4px_0px_0px_var(--brutalist-shadow)] transition-all hover:-translate-y-0.5 hover:border-foreground hover:bg-foreground hover:text-background disabled:opacity-50"
+          className="flex items-center gap-2 border border-border bg-card px-4 py-2 text-sm font-bold tracking-widest text-foreground uppercase shadow-2xl transition-all hover:-translate-y-0.5 hover:border-foreground hover:bg-foreground hover:text-background disabled:opacity-50"
         >
           <RefreshCw size={16} className={status === 'loading' ? 'animate-spin' : ''} />
           {status === 'loading' ? 'Polling...' : 'Flush & Refresh'}
@@ -79,7 +79,7 @@ export default function LogsPage() {
       </div>
 
       {/* Brutalist Terminal Interface */}
-      <div className="relative flex min-h-[400px] flex-col overflow-x-auto border-4 border-border bg-card p-6 font-mono text-sm shadow-[12px_12px_0px_0px_var(--brutalist-shadow)] md:p-8">
+      <div className="relative flex min-h-[400px] flex-col overflow-x-auto border border-border bg-card p-6 font-mono text-sm shadow-2xl md:p-8">
         {/* Terminal Header Bar */}
         <div className="mb-4 flex items-center gap-3 border-b-2 border-border/20 pb-4 text-xs font-bold tracking-widest text-foreground/50 uppercase">
           <ShieldCheck size={16} />

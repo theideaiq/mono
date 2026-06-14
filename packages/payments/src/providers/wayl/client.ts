@@ -1,4 +1,4 @@
-import { env } from '@auibsal/env';
+import { env } from '@theideaiq/env';
 
 const WAYL_API_KEY = env.WAYL_API_KEY;
 const WAYL_ENV = env.WAYL_ENV === 'live' ? 'live' : 'test';

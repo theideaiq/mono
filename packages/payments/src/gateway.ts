@@ -8,7 +8,7 @@ import type {
   UniversalCheckoutResponse, 
   PaymentProvider 
 } from './types';
-import { env } from '@auibsal/env';
+import { env } from '@theideaiq/env';
 
 // Establish the primary engine from Vercel environment variables
 const PRIMARY_PROVIDER = (env.PRIMARY_PAYMENT_PROVIDER as PaymentProvider) || 'wayl';

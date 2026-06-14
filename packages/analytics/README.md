@@ -1,4 +1,4 @@
-# @auibsal/analytics
+# @theideaiq/analytics
 
 ## ⚡ Overview
 Core architecture and dependencies.

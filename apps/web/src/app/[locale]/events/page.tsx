@@ -1,4 +1,4 @@
-import { createClient } from '@auibsal/auth/server';
+import { createClient } from '@theideaiq/auth/server';
 import { Calendar, MapPin } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 
@@ -49,7 +49,7 @@ export default async function Events({ params }: { params: Promise<{ locale: 'en
           upcomingEvents.map((event) => (
             <article
               key={event.id}
-              className="group flex flex-col border-4 border-border bg-card shadow-[8px_8px_0px_0px_var(--brutalist-shadow)] transition-all duration-200 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[12px_12px_0px_0px_var(--brutalist-shadow)] md:flex-row"
+              className="group flex flex-col border border-border bg-card shadow-2xl transition-all duration-200 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-2xl md:flex-row"
             >
               {/* Sidebar now uses primary background for contrast */}
               <div className="flex flex-col justify-center bg-foreground p-10 md:w-1/3">

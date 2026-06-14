@@ -105,31 +105,31 @@ importers:
 
   apps/nexus:
     dependencies:
-      '@auibsal/auth':
+      '@theideaiq/auth':
         specifier: workspace:*
         version: link:../../packages/auth
-      '@auibsal/database':
+      '@theideaiq/database':
         specifier: workspace:*
         version: link:../../packages/database
-      '@auibsal/editor':
+      '@theideaiq/editor':
         specifier: workspace:*
         version: link:../../packages/editor
-      '@auibsal/env':
+      '@theideaiq/env':
         specifier: workspace:*
         version: link:../../packages/env
-      '@auibsal/i18n':
+      '@theideaiq/i18n':
         specifier: workspace:*
         version: link:../../packages/i18n
-      '@auibsal/payments':
+      '@theideaiq/payments':
         specifier: workspace:*
         version: link:../../packages/payments
-      '@auibsal/seo':
+      '@theideaiq/seo':
         specifier: workspace:*
         version: link:../../packages/seo
-      '@auibsal/testing':
+      '@theideaiq/testing':
         specifier: workspace:*
         version: link:../../packages/testing
-      '@auibsal/ui':
+      '@theideaiq/ui':
         specifier: workspace:*
         version: link:../../packages/ui
       '@hello-pangea/dnd':
@@ -163,7 +163,7 @@ importers:
         specifier: 'catalog:'
         version: 19.2.7(react@19.2.7)
     devDependencies:
-      '@auibsal/config':
+      '@theideaiq/config':
         specifier: workspace:*
         version: link:../../packages/config
       '@tailwindcss/postcss':
@@ -190,25 +190,25 @@ importers:
 
   apps/web:
     dependencies:
-      '@auibsal/auth':
+      '@theideaiq/auth':
         specifier: workspace:*
         version: link:../../packages/auth
-      '@auibsal/database':
+      '@theideaiq/database':
         specifier: workspace:*
         version: link:../../packages/database
-      '@auibsal/env':
+      '@theideaiq/env':
         specifier: workspace:*
         version: link:../../packages/env
-      '@auibsal/i18n':
+      '@theideaiq/i18n':
         specifier: workspace:*
         version: link:../../packages/i18n
-      '@auibsal/seo':
+      '@theideaiq/seo':
         specifier: workspace:*
         version: link:../../packages/seo
-      '@auibsal/testing':
+      '@theideaiq/testing':
         specifier: workspace:*
         version: link:../../packages/testing
-      '@auibsal/ui':
+      '@theideaiq/ui':
         specifier: workspace:*
         version: link:../../packages/ui
       '@react-three/drei':
@@ -251,7 +251,7 @@ importers:
         specifier: ^5.0.14
         version: 5.0.14(@types/react@19.2.16)(immer@10.2.0)(react@19.2.7)(use-sync-external-store@1.6.0(react@19.2.7))
     devDependencies:
-      '@auibsal/config':
+      '@theideaiq/config':
         specifier: workspace:*
         version: link:../../packages/config
       '@tailwindcss/postcss':
@@ -278,10 +278,10 @@ importers:
 
   apps/workshop:
     dependencies:
-      '@auibsal/ui':
+      '@theideaiq/ui':
         specifier: workspace:*
         version: link:../../packages/ui
-      '@auibsal/utils':
+      '@theideaiq/utils':
         specifier: workspace:*
         version: link:../../packages/utils
       next:
@@ -331,7 +331,7 @@ importers:
         specifier: ^6.0.194
         version: 6.0.194(zod@4.4.3)
     devDependencies:
-      '@auibsal/config':
+      '@theideaiq/config':
         specifier: workspace:*
         version: link:../config
       typescript:
@@ -347,7 +347,7 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0(next@16.2.7(@opentelemetry/api@1.9.1)(@playwright/test@1.60.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react@19.2.7)
     devDependencies:
-      '@auibsal/config':
+      '@theideaiq/config':
         specifier: workspace:*
         version: link:../config
       '@types/react':
@@ -362,10 +362,10 @@ importers:
 
   packages/auth:
     dependencies:
-      '@auibsal/database':
+      '@theideaiq/database':
         specifier: workspace:*
         version: link:../database
-      '@auibsal/env':
+      '@theideaiq/env':
         specifier: workspace:*
         version: link:../env
       '@supabase/ssr':
@@ -378,7 +378,7 @@ importers:
         specifier: 'catalog:'
         version: 16.2.7(@babel/core@7.29.7)(@opentelemetry/api@1.9.1)(@playwright/test@1.60.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
     devDependencies:
-      '@auibsal/config':
+      '@theideaiq/config':
         specifier: workspace:*
         version: link:../config
       '@types/node':
@@ -396,7 +396,7 @@ importers:
 
   packages/cache:
     dependencies:
-      '@auibsal/env':
+      '@theideaiq/env':
         specifier: workspace:*
         version: link:../env
       '@upstash/ratelimit':
@@ -406,7 +406,7 @@ importers:
         specifier: ^1.31.3
         version: 1.38.0
     devDependencies:
-      '@auibsal/config':
+      '@theideaiq/config':
         specifier: workspace:*
         version: link:../config
       typescript:
@@ -428,7 +428,7 @@ importers:
         specifier: ^4.4.3
         version: 4.4.3
     devDependencies:
-      '@auibsal/config':
+      '@theideaiq/config':
         specifier: workspace:*
         version: link:../config
       typescript:
@@ -498,10 +498,10 @@ importers:
         specifier: ^2.4.0
         version: 2.27.2
     devDependencies:
-      '@auibsal/config':
+      '@theideaiq/config':
         specifier: workspace:*
         version: link:../config
-      '@auibsal/ui':
+      '@theideaiq/ui':
         specifier: workspace:*
         version: link:../ui
       '@types/react':
@@ -516,7 +516,7 @@ importers:
 
   packages/email:
     dependencies:
-      '@auibsal/env':
+      '@theideaiq/env':
         specifier: workspace:*
         version: link:../env
       '@react-email/components':
@@ -532,7 +532,7 @@ importers:
         specifier: ^6.12.4
         version: 6.12.4(@react-email/render@2.0.6(react-dom@19.2.7(react@19.2.7))(react@19.2.7))
     devDependencies:
-      '@auibsal/config':
+      '@theideaiq/config':
         specifier: workspace:*
         version: link:../config
       '@types/react':
@@ -554,7 +554,7 @@ importers:
         specifier: ^3.23.8
         version: 3.25.76
     devDependencies:
-      '@auibsal/config':
+      '@theideaiq/config':
         specifier: workspace:*
         version: link:../config
       '@types/node':
@@ -566,7 +566,7 @@ importers:
 
   packages/i18n:
     devDependencies:
-      '@auibsal/config':
+      '@theideaiq/config':
         specifier: workspace:*
         version: link:../config
       typescript:
@@ -575,14 +575,14 @@ importers:
 
   packages/jobs:
     dependencies:
-      '@auibsal/env':
+      '@theideaiq/env':
         specifier: workspace:*
         version: link:../env
       '@upstash/qstash':
         specifier: ^2.7.7
         version: 2.11.0
     devDependencies:
-      '@auibsal/config':
+      '@theideaiq/config':
         specifier: workspace:*
         version: link:../config
       typescript:
@@ -591,11 +591,11 @@ importers:
 
   packages/payments:
     dependencies:
-      '@auibsal/env':
+      '@theideaiq/env':
         specifier: workspace:*
         version: link:../env
     devDependencies:
-      '@auibsal/config':
+      '@theideaiq/config':
         specifier: workspace:*
         version: link:../config
       '@types/node':
@@ -607,14 +607,14 @@ importers:
 
   packages/search:
     dependencies:
-      '@auibsal/env':
+      '@theideaiq/env':
         specifier: workspace:*
         version: link:../env
       meilisearch:
         specifier: ^0.58.0
         version: 0.58.0
     devDependencies:
-      '@auibsal/config':
+      '@theideaiq/config':
         specifier: workspace:*
         version: link:../config
       typescript:
@@ -623,14 +623,14 @@ importers:
 
   packages/seo:
     dependencies:
-      '@auibsal/env':
+      '@theideaiq/env':
         specifier: workspace:*
         version: link:../env
       next:
         specifier: 'catalog:'
         version: 16.2.7(@babel/core@7.29.7)(@opentelemetry/api@1.9.1)(@playwright/test@1.60.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
     devDependencies:
-      '@auibsal/config':
+      '@theideaiq/config':
         specifier: workspace:*
         version: link:../config
       '@types/node':
@@ -646,7 +646,7 @@ importers:
         specifier: 'catalog:'
         version: 2.106.2
     devDependencies:
-      '@auibsal/config':
+      '@theideaiq/config':
         specifier: workspace:*
         version: link:../config
       typescript:
@@ -732,10 +732,10 @@ importers:
         specifier: ^1.4.0
         version: 1.4.0
     devDependencies:
-      '@auibsal/config':
+      '@theideaiq/config':
         specifier: workspace:*
         version: link:../config
-      '@auibsal/testing':
+      '@theideaiq/testing':
         specifier: workspace:*
         version: link:../testing
       '@tailwindcss/postcss':
@@ -771,7 +771,7 @@ importers:
 
   packages/utils:
     devDependencies:
-      '@auibsal/config':
+      '@theideaiq/config':
         specifier: workspace:*
         version: link:../config
       typescript:

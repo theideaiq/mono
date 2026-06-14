@@ -1,6 +1,6 @@
 'use client';
 
-import { InteractiveErrorState } from '@auibsal/ui/components/InteractiveErrorState';
+import { InteractiveErrorState } from '@theideaiq/ui/components/InteractiveErrorState';
 import { useRouter } from 'next/navigation';
 
 export default function NexusUnauthorized() {

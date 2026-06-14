@@ -1,8 +1,8 @@
 import 'server-only';
 
-import type { Database } from '@auibsal/database/types';
+import type { Database } from '@theideaiq/database/types';
 import { createClient as createSupabaseClient } from '@supabase/supabase-js';
-import { env } from '@auibsal/env';
+import { env } from '@theideaiq/env';
 
 /**
  * createAdminClient

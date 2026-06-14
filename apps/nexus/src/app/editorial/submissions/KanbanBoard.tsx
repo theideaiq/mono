@@ -1,7 +1,7 @@
 'use client';
 
-import { createClient } from '@auibsal/auth/client';
-import type { Submission, SubmissionStatus } from '@auibsal/database/types';
+import { createClient } from '@theideaiq/auth/client';
+import type { Submission, SubmissionStatus } from '@theideaiq/database/types';
 
 import { DragDropContext, Draggable, Droppable, type DropResult } from '@hello-pangea/dnd';
 import { AlertOctagon, GripVertical, ShieldCheck, User } from 'lucide-react';
@@ -177,9 +177,9 @@ export default function KanbanBoard() {
 
   if (loading) {
     return (
-      <div className="flex h-64 items-center justify-center border-4 border-dashed border-border/20 p-8">
+      <div className="flex h-64 items-center justify-center border border-dashed border-border/20 p-8">
         <div className="flex animate-pulse items-center gap-3 text-sm font-bold tracking-widest text-foreground/50 uppercase">
-          <div className="h-4 w-4 animate-spin rounded-none bg-primary"></div>
+          <div className="h-4 w-4 animate-spin rounded-2xl bg-primary"></div>
           Loading Board Logistics...
         </div>
       </div>
@@ -193,7 +193,7 @@ export default function KanbanBoard() {
           <div key={status.id} className="flex w-80 flex-shrink-0 flex-col">
             <h3 className="mb-4 flex items-center justify-between border-b-4 border-border pb-3 font-bold tracking-widest text-foreground uppercase">
               {status.label}
-              <span className="bg-foreground px-3 py-1 text-xs font-bold text-background shadow-[4px_4px_0px_0px_var(--primary)]">
+              <span className="bg-foreground px-3 py-1 text-xs font-bold text-background shadow-2xl">
                 {groupedSubmissions[status.id].length}
               </span>
             </h3>
@@ -203,7 +203,7 @@ export default function KanbanBoard() {
                 <div
                   ref={provided.innerRef}
                   {...provided.droppableProps}
-                  className={`flex min-h-[600px] flex-col gap-5 border-4 p-4 transition-colors ${
+                  className={`flex min-h-[600px] flex-col gap-5 border p-4 transition-colors ${
                     snapshot.isDraggingOver
                       ? 'border-dashed border-primary bg-foreground/5'
                       : 'border-border bg-transparent'
@@ -222,10 +222,10 @@ export default function KanbanBoard() {
                           <div
                             ref={provided.innerRef}
                             {...provided.draggableProps}
-                            className={`border-4 bg-card p-4 text-foreground transition-all ${
+                            className={`border bg-card p-4 text-foreground transition-all ${
                               snapshot.isDragging
-                                ? 'z-50 scale-105 -rotate-2 border-primary shadow-[12px_12px_0px_0px_var(--primary)]'
-                                : 'border-border shadow-[6px_6px_0px_0px_var(--brutalist-shadow)]'
+                                ? 'z-50 scale-105 -rotate-2 border-primary shadow-2xl'
+                                : 'border-border shadow-2xl'
                             }`}
                             style={{ ...provided.draggableProps.style }}
                           >
@@ -270,7 +270,7 @@ export default function KanbanBoard() {
                                   <select
                                     value={sub.assigned_to || 'unassigned'}
                                     onChange={(e) => handleAssignEditor(sub.id, e.target.value)}
-                                    className="w-full cursor-pointer rounded-none border-2 border-border bg-background p-1.5 text-xs font-bold tracking-wider text-foreground uppercase transition-colors hover:border-primary focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
+                                    className="w-full cursor-pointer rounded-2xl border border-border bg-background p-1.5 text-xs font-bold tracking-wider text-foreground uppercase transition-colors hover:border-primary focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
                                   >
                                     <option value="unassigned">-- Unassigned --</option>
                                     {editors.map((editor) => (
@@ -282,7 +282,7 @@ export default function KanbanBoard() {
                                 </div>
 
                                 <div className="flex items-end justify-between">
-                                  <span className="border-2 border-border bg-foreground px-3 py-1 text-[10px] font-bold tracking-widest text-background uppercase shadow-[2px_2px_0px_0px_var(--brutalist-shadow)]">
+                                  <span className="border border-border bg-foreground px-3 py-1 text-[10px] font-bold tracking-widest text-background uppercase shadow-2xl">
                                     {sub.type}
                                   </span>
                                   {sub.rubric_formatting === 'disqualified' && (

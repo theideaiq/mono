@@ -1,4 +1,4 @@
-# @auibsal/config
+# @theideaiq/config
 
 ## ⚡ Overview
 Core architecture and dependencies.

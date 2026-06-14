@@ -1,5 +1,5 @@
 {
-  "name": "@auibsal/editor",
+  "name": "@theideaiq/editor",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -37,8 +37,8 @@
     "@tiptap/starter-kit": "^2.4.0"
   },
   "devDependencies": {
-    "@auibsal/config": "workspace:*",
-    "@auibsal/ui": "workspace:*",
+    "@theideaiq/config": "workspace:*",
+    "@theideaiq/ui": "workspace:*",
     "@types/react": "catalog:",
     "react": "catalog:",
     "typescript": "catalog:"

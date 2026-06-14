@@ -23,7 +23,7 @@ export function generateArticleSchema({
     },
     publisher: {
       '@type': 'Organization',
-      name: 'AUIB Society of Arts & Letters',
+      name: 'The IDEA IQ Inc.',
     },
     datePublished: publishedAt,
     mainEntityOfPage: {

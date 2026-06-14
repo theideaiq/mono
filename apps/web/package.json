@@ -1,5 +1,5 @@
 {
-  "name": "@auibsal/web",
+  "name": "@theideaiq/web",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -12,13 +12,13 @@
     "clean": "rm -rf .next .turbo node_modules"
   },
   "dependencies": {
-    "@auibsal/auth": "workspace:*",
-    "@auibsal/database": "workspace:*",
-    "@auibsal/env": "workspace:*",
-    "@auibsal/i18n": "workspace:*",
-    "@auibsal/seo": "workspace:*",
-    "@auibsal/testing": "workspace:*",
-    "@auibsal/ui": "workspace:*",
+    "@theideaiq/auth": "workspace:*",
+    "@theideaiq/database": "workspace:*",
+    "@theideaiq/env": "workspace:*",
+    "@theideaiq/i18n": "workspace:*",
+    "@theideaiq/seo": "workspace:*",
+    "@theideaiq/testing": "workspace:*",
+    "@theideaiq/ui": "workspace:*",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.6.1",
     "framer-motion": "catalog:",
@@ -34,7 +34,7 @@
     "zustand": "^5.0.14"
   },
   "devDependencies": {
-    "@auibsal/config": "workspace:*",
+    "@theideaiq/config": "workspace:*",
     "@tailwindcss/postcss": "catalog:",
     "@types/howler": "^2.2.13",
     "@types/node": "catalog:",

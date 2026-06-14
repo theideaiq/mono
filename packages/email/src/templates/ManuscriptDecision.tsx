@@ -42,7 +42,7 @@ export const ManuscriptDecisionTemplate: React.FC<ManuscriptDecisionProps> = ({
         <Container style={container}>
           {/* Architectural Header */}
           <Section style={header}>
-            <Text style={societyName}>AUIB SOCIETY OF ARTS AND LETTERS</Text>
+            <Text style={societyName}>The IDEA IQ SOCIETY OF ARTS AND LETTERS</Text>
           </Section>
 
           <Section style={content}>
@@ -78,14 +78,14 @@ export const ManuscriptDecisionTemplate: React.FC<ManuscriptDecisionProps> = ({
             )}
 
             <Section style={buttonContainer}>
-              <Link href="https://nexus.auibsal.org/login" style={button}>
+              <Link href="https://nexus.theideaiq.com/login" style={button}>
                 ACCESS NEXUS PORTAL
               </Link>
             </Section>
 
             <Hr style={hr} />
             <Text style={footer}>
-              This is a mathematically automated transmission from the AUIB Society of Arts and Letters infrastructure. Do not reply to this email.
+              This is a mathematically automated transmission from the The IDEA IQ Inc. infrastructure. Do not reply to this email.
             </Text>
           </Section>
         </Container>

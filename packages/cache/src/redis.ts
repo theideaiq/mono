@@ -1,5 +1,5 @@
 import { Redis } from '@upstash/redis';
-import { env } from '@auibsal/env';
+import { env } from '@theideaiq/env';
 
 export const redis = new Redis({
   url: env.UPSTASH_REDIS_REST_URL,

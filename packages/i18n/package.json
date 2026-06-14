@@ -1,5 +1,5 @@
 {
-  "name": "@auibsal/i18n",
+  "name": "@theideaiq/i18n",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -12,7 +12,7 @@
     "clean": "rm -rf dist .turbo node_modules"
   },
   "devDependencies": {
-    "@auibsal/config": "workspace:*",
+    "@theideaiq/config": "workspace:*",
     "typescript": "catalog:"
   }
 }

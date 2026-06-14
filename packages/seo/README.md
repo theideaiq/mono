@@ -1,4 +1,4 @@
-# @auibsal/seo
+# @theideaiq/seo
 
 ## ⚡ Overview
 Core architecture and dependencies.

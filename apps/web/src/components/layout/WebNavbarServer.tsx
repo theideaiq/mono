@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server';
-import { env } from '@auibsal/env';
+import { env } from '@theideaiq/env';
 
 import WebNavbarClient from './WebNavbarClient';
 

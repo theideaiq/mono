@@ -1,4 +1,4 @@
-# @auibsal/auth
+# @theideaiq/auth
 
 ## ⚡ Overview
 Core architecture and dependencies.

@@ -4,7 +4,7 @@ import type { Editor } from '@tiptap/react';
 export function EditorToolbar({ editor }: { editor: Editor }) {
   const activeClass = 'bg-black text-white';
   const inactiveClass = 'hover:bg-zinc-200';
-  const btnClass = 'px-3 py-1 border-2 border-black font-black uppercase text-xs transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black';
+  const btnClass = 'px-3 py-1 border border-black font-black uppercase text-xs transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black';
 
   // CRITICAL FIX: Cast the chain object to 'any' to bypass the strict type checker
   // This allows dynamically injected extension commands (like toggleBold) to execute.

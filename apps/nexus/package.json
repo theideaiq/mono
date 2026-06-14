@@ -1,5 +1,5 @@
 {
-  "name": "@auibsal/nexus",
+  "name": "@theideaiq/nexus",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -12,15 +12,15 @@
     "clean": "rm -rf .next .turbo node_modules"
   },
   "dependencies": {
-    "@auibsal/auth": "workspace:*",
-    "@auibsal/database": "workspace:*",
-    "@auibsal/editor": "workspace:*",
-    "@auibsal/env": "workspace:*",
-    "@auibsal/i18n": "workspace:*",
-    "@auibsal/payments": "workspace:*",
-    "@auibsal/seo": "workspace:*",
-    "@auibsal/testing": "workspace:*",
-    "@auibsal/ui": "workspace:*",
+    "@theideaiq/auth": "workspace:*",
+    "@theideaiq/database": "workspace:*",
+    "@theideaiq/editor": "workspace:*",
+    "@theideaiq/env": "workspace:*",
+    "@theideaiq/i18n": "workspace:*",
+    "@theideaiq/payments": "workspace:*",
+    "@theideaiq/seo": "workspace:*",
+    "@theideaiq/testing": "workspace:*",
+    "@theideaiq/ui": "workspace:*",
     "@hello-pangea/dnd": "^18.0.1",
     "@liveblocks/client": "^3.19.4",
     "@liveblocks/node": "^3.19.5",
@@ -33,7 +33,7 @@
     "react-dom": "catalog:"
   },
   "devDependencies": {
-    "@auibsal/config": "workspace:*",
+    "@theideaiq/config": "workspace:*",
     "@tailwindcss/postcss": "catalog:",
     "@tailwindcss/typography": "catalog:",
     "@types/node": "catalog:",
