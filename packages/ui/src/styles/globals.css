@@ -3,18 +3,19 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  /* AUIB Brand Colors */
-  --color-auib-red: #9c213e;
-  --color-auib-charcoal: #273237;
-  --color-auib-white: #ffffff;
+  /* theideaiq Brand Colors */
+  --color-brand-pink: #e91e63;
+  --color-brand-yellow: #facc15;
+  --color-brand-dark: #0f172a;
+  --color-brand-deep: #0f1014;
+  --color-brand-bg: #121212;
+  --color-brand-surface: #1e1e1e;
 
   /* Base & Typography Mappings */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans:
-    var(--font-ubuntu), var(--font-ubuntu-arabic), ui-sans-serif, system-ui, -apple-system,
-    BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: var(--font-cairo), ui-sans-serif, system-ui, sans-serif;
   --font-heading: var(--font-sans);
 
   /* Shadcn UI Variable Mappings */
@@ -48,112 +49,124 @@
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
 
-  /* Brutalist Overrides (Zero Radius) */
-  --radius-sm: 0rem;
-  --radius-md: 0rem;
-  --radius-lg: 0rem;
-  --radius-xl: 0rem;
-  --radius-2xl: 0rem;
-  --radius-3xl: 0rem;
-  --radius-4xl: 0rem;
+  /* Modern Radius Overrides */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 
-  /* Brutalist Shadows (Now dynamic via CSS variables) */
-  --shadow-brutalist-sm: 4px 4px 0px 0px var(--brutalist-shadow);
-  --shadow-brutalist-md: 8px 8px 0px 0px var(--brutalist-shadow);
-  --shadow-brutalist-lg: 16px 16px 0px 0px var(--brutalist-shadow);
-  --shadow-brutalist-red: 8px 8px 0px 0px var(--color-auib-red);
+  /* Animations */
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
 }
 
 @layer base {
   :root {
-    /* Dynamic Brutalist Tokens */
-    --brutalist-shadow: #273237;
+    /* Standard Tokens (Light Mode) */
+    --background: #ffffff;
+    --foreground: #0f172a; /* Brand Dark */
+    --card: #ffffff;
+    --card-foreground: #0f172a;
+    --popover: #ffffff;
+    --popover-foreground: #0f172a;
+    --primary: #e91e63; /* Brand Pink */
+    --primary-foreground: #ffffff;
+    --secondary: #facc15; /* Brand Yellow */
+    --secondary-foreground: #0f1014; /* Brand Deep */
+    --muted: #f1f5f9;
+    --muted-foreground: #64748b;
+    --accent: #f1f5f9;
+    --accent-foreground: #0f172a;
+    --destructive: #ef4444;
 
-    /* Standard Tokens */
-    --background: oklch(1 0 0);
-    --foreground: #273237;
-    --card: oklch(1 0 0);
-    --card-foreground: #273237;
-    --popover: oklch(1 0 0);
-    --popover-foreground: #273237;
-    --primary: #9c213e;
-    --primary-foreground: oklch(1 0 0);
-    --secondary: oklch(0.97 0 0);
-    --secondary-foreground: #273237;
-    --muted: oklch(0.97 0 0);
-    --muted-foreground: oklch(0.556 0 0);
-    --accent: oklch(0.97 0 0);
-    --accent-foreground: #273237;
-    --destructive: oklch(0.577 0.245 27.325);
+    /* Borders & Inputs */
+    --border: #e2e8f0;
+    --input: #e2e8f0;
+    --ring: #e91e63; /* Brand Pink */
+    
+    /* Charts */
+    --chart-1: #e91e63; /* Pink */
+    --chart-2: #facc15; /* Yellow */
+    --chart-3: #0f172a; /* Dark */
+    --chart-4: #3b82f6; /* Blue for contrast */
+    --chart-5: #10b981; /* Green for contrast */
+    
+    --radius: 0.5rem;
 
-    /* Hardened borders for light mode */
-    --border: #273237;
-    --input: #273237;
-
-    --ring: #9c213e;
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
-    --radius: 0rem;
-
-    --sidebar: oklch(0.985 0 0);
-    --sidebar-foreground: #273237;
-    --sidebar-primary: #9c213e;
-    --sidebar-primary-foreground: oklch(1 0 0);
-    --sidebar-accent: oklch(0.97 0 0);
-    --sidebar-accent-foreground: #273237;
-    --sidebar-border: #273237;
-    --sidebar-ring: #9c213e;
+    /* Sidebar Light */
+    --sidebar: #f8fafc;
+    --sidebar-foreground: #0f172a;
+    --sidebar-primary: #e91e63;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #f1f5f9;
+    --sidebar-accent-foreground: #0f172a;
+    --sidebar-border: #e2e8f0;
+    --sidebar-ring: #e91e63;
   }
 
   .dark {
-    /* Drops dark mode shadows to pure black for high contrast against charcoal */
-    --brutalist-shadow: #000000;
+    /* Standard Tokens (Dark Mode / Cinema Mode) */
+    --background: #121212; /* Brand BG */
+    --foreground: #ffffff;
+    --card: #1e1e1e; /* Brand Surface */
+    --card-foreground: #ffffff;
+    --popover: #1e1e1e;
+    --popover-foreground: #ffffff;
+    --primary: #e91e63; /* Brand Pink */
+    --primary-foreground: #ffffff;
+    --secondary: #facc15; /* Brand Yellow */
+    --secondary-foreground: #0f1014; /* Brand Deep */
+    --muted: #27272a;
+    --muted-foreground: #a1a1aa;
+    --accent: #27272a;
+    --accent-foreground: #ffffff;
+    --destructive: #7f1d1d;
 
-    /* Standard Tokens */
-    --background: #273237;
-    --foreground: oklch(1 0 0);
-    --card: #273237;
-    --card-foreground: oklch(1 0 0);
-    --popover: #273237;
-    --popover-foreground: oklch(1 0 0);
-    --primary: #9c213e;
-    --primary-foreground: oklch(1 0 0);
-    --secondary: oklch(0.269 0 0);
-    --secondary-foreground: oklch(1 0 0);
-    --muted: oklch(0.269 0 0);
-    --muted-foreground: oklch(0.708 0 0);
-    --accent: oklch(0.269 0 0);
-    --accent-foreground: oklch(1 0 0);
-    --destructive: oklch(0.704 0.191 22.216);
+    /* Borders & Inputs */
+    --border: #27272a;
+    --input: #27272a;
+    --ring: #e91e63;
 
-    /* Hardened borders for dark mode */
-    --border: oklch(1 0 0);
-    --input: oklch(1 0 0);
+    /* Charts */
+    --chart-1: #e91e63;
+    --chart-2: #facc15;
+    --chart-3: #ffffff;
+    --chart-4: #60a5fa;
+    --chart-5: #34d399;
 
-    --ring: #9c213e;
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
-
-    --sidebar: #273237;
-    --sidebar-foreground: oklch(1 0 0);
-    --sidebar-primary: #9c213e;
-    --sidebar-primary-foreground: oklch(1 0 0);
-    --sidebar-accent: oklch(0.269 0 0);
-    --sidebar-accent-foreground: oklch(1 0 0);
-    --sidebar-border: oklch(1 0 0);
-    --sidebar-ring: #9c213e;
+    /* Sidebar Dark */
+    --sidebar: #0f1014; /* Brand Deep */
+    --sidebar-foreground: #ffffff;
+    --sidebar-primary: #e91e63;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #1e1e1e; /* Brand Surface */
+    --sidebar-accent-foreground: #ffffff;
+    --sidebar-border: #27272a;
+    --sidebar-ring: #e91e63;
   }
 
   /* Core Element Resets */
   * {
     border-color: var(--border);
-    outline-color: color-mix(in oklch, var(--ring) 50%, transparent);
+    /* Updated color-mix to srgb since your brand colors use hex values instead of oklch */
+    outline-color: color-mix(in srgb, var(--ring) 50%, transparent);
   }
 
   body {
