@@ -1,7 +1,7 @@
 import { Liveblocks } from '@liveblocks/node';
 import { NextRequest, NextResponse } from 'next/server';
-import { createAdminClient } from '@auibsal/auth/admin';
-import { env } from '@auibsal/env';
+import { createAdminClient } from '@theideaiq/auth/admin';
+import { env } from '@theideaiq/env';
 
 const liveblocks = new Liveblocks({
   secret: env.LIVEBLOCKS_SECRET_KEY as string,
@@ -35,9 +35,9 @@ export async function POST(request: NextRequest) {
     },
     {
       userInfo: {
-        name: user.user_metadata?.full_name || 'AUIB Editor',
+        name: user.user_metadata?.full_name || 'The IDEA IQ Editor',
         color: '#000000',
-        avatar: user.user_metadata?.avatar_url || 'https://auibsal.org/default-avatar.png',
+        avatar: user.user_metadata?.avatar_url || 'https://theideaiq.com/default-avatar.png',
       },
     }
   );

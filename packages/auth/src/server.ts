@@ -1,10 +1,10 @@
 import 'server-only';
 
-import type { Database } from '@auibsal/database/types';
+import type { Database } from '@theideaiq/database/types';
 
 import { createServerClient } from '@supabase/ssr';
 import { cookies } from 'next/headers';
-import { env } from '@auibsal/env';
+import { env } from '@theideaiq/env';
 
 export async function createClient() {
   const cookieStore = await cookies();

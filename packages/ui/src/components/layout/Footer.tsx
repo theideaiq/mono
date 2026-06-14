@@ -34,10 +34,10 @@ export function Footer({ locale, dictionary }: FooterProps) {
     // dir="auto" ensures BiDi address and description rendering is handled natively
     <footer
       dir="auto"
-      className="border-t-4 border-auib-charcoal bg-auib-red pt-16 pb-8 text-white"
+      className="border-t-4 border-border bg-primary pt-16 pb-8 text-white"
     >
       <div className="mx-auto max-w-6xl px-6">
-        <div className="mb-12 grid grid-cols-1 gap-12 border-b-2 border-auib-charcoal pb-12 md:grid-cols-3">
+        <div className="mb-12 grid grid-cols-1 gap-12 border-b-2 border-border pb-12 md:grid-cols-3">
           <div className="md:col-span-1">
             <div className="mb-6">
               <Logo locale={locale} className="text-xl text-white" />
@@ -48,7 +48,7 @@ export function Footer({ locale, dictionary }: FooterProps) {
           </div>
 
           <div className="md:col-span-1">
-            <h4 className="mb-6 inline-block bg-auib-charcoal px-3 py-1 text-xs font-bold tracking-widest text-white uppercase">
+            <h4 className="mb-6 inline-block bg-brand-dark px-3 py-1 text-xs font-bold tracking-widest text-white uppercase">
               {dictionary.linksTitle}
             </h4>
             <ul className="space-y-3 text-sm font-bold tracking-wider text-white/80 uppercase">
@@ -66,7 +66,7 @@ export function Footer({ locale, dictionary }: FooterProps) {
           </div>
 
           <div className="text-sm font-medium text-white/80 md:col-span-1">
-            <h4 className="mb-6 inline-block bg-auib-charcoal px-3 py-1 text-xs font-bold tracking-widest text-white uppercase">
+            <h4 className="mb-6 inline-block bg-brand-dark px-3 py-1 text-xs font-bold tracking-widest text-white uppercase">
               {dictionary.contactTitle}
             </h4>
             <address className="leading-relaxed not-italic">

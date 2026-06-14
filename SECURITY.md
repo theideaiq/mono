@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-Security updates and patches are exclusively provided for the current production deployment branch of the AUIB Society of Arts and Letters monorepo.
+Security updates and patches are exclusively provided for the current production deployment branch of the The IDEA IQ Inc. monorepo.
 
 | Version | Branch | Supported |
 | :--- | :--- | :--- |
@@ -16,7 +16,7 @@ We take the security of our platform and the data of our members very seriously.
 ### Private Reporting
 You can report security vulnerabilities privately via:
 1.  **GitHub Private Vulnerability Reporting**: Use the "Report a vulnerability" button in the "Security" tab of the repository.
-2.  **Email**: Send reports directly to **security@auibsal.org**.
+2.  **Email**: Send reports directly to **security@theideaiq.com**.
 
 When reporting, please include:
 - A detailed description of the vulnerability.
@@ -39,7 +39,7 @@ The following items are strictly out of scope for this policy:
 
 ## Content Security Policy (CSP) Architecture
 
-The AUIB Society of Arts and Letters application employs a strictly-typed Content Security Policy (CSP) injected at the edge via Next.js Middleware.
+The The IDEA IQ Inc. application employs a strictly-typed Content Security Policy (CSP) injected at the edge via Next.js Middleware.
 
 Our policy is designed to achieve maximum protection against Cross-Site Scripting (XSS) and data injection attacks while maintaining full compatibility with the Next.js 15 App Router and Supabase capabilities.
 

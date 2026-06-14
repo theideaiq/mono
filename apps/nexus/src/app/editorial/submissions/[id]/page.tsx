@@ -1,7 +1,7 @@
 'use client';
 
-import { createClient } from '@auibsal/auth/client';
-import type { Submission } from '@auibsal/database/types';
+import { createClient } from '@theideaiq/auth/client';
+import type { Submission } from '@theideaiq/database/types';
 import {
   AlertOctagon,
   AlertTriangle,
@@ -19,7 +19,7 @@ import { useCallback, useEffect, useState } from 'react';
 
 // LIVEBLOCKS & EDITOR IMPORTS
 import { LiveblocksProvider, RoomProvider, ClientSideSuspense } from '@liveblocks/react/suspense';
-import { MultiplayerEditor } from '@auibsal/editor/editor';
+import { MultiplayerEditor } from '@theideaiq/editor/editor';
 
 type GradingSubmission = Submission & {
   users?: { full_name: string } | null;
@@ -163,9 +163,9 @@ export default function GradingPage() {
 
   if (loading)
     return (
-      <div className="flex h-[500px] items-center justify-center border-4 border-dashed border-border/20 p-12">
+      <div className="flex h-[500px] items-center justify-center border border-dashed border-border/20 p-12">
         <div className="flex animate-pulse items-center gap-3 text-sm font-bold tracking-widest text-foreground/50 uppercase">
-          <div className="h-4 w-4 animate-spin rounded-none bg-primary"></div>
+          <div className="h-4 w-4 animate-spin rounded-2xl bg-primary"></div>
           Mounting Secure Dossier...
         </div>
       </div>
@@ -173,7 +173,7 @@ export default function GradingPage() {
 
   if (!submission)
     return (
-      <div className="flex h-96 flex-col items-center justify-center gap-4 border-4 border-dashed border-red-500/30 bg-red-500/5 p-12 font-bold tracking-widest text-red-500 uppercase">
+      <div className="flex h-96 flex-col items-center justify-center gap-4 border border-dashed border-red-500/30 bg-red-500/5 p-12 font-bold tracking-widest text-red-500 uppercase">
         <ShieldAlert size={48} />
         Submission Not Found.
       </div>
@@ -191,7 +191,7 @@ export default function GradingPage() {
   return (
     <div className="mx-auto flex max-w-7xl flex-col gap-8 lg:flex-row lg:gap-12">
       {/* File Viewer Side */}
-      <div className="flex flex-1 flex-col overflow-hidden border-4 border-border bg-card text-foreground shadow-[12px_12px_0px_0px_var(--brutalist-shadow)]">
+      <div className="flex flex-1 flex-col overflow-hidden border border-border bg-card text-foreground shadow-2xl">
         <div className="flex items-start justify-between border-b-4 border-border bg-foreground p-6 text-background md:items-center">
           <div>
             <div className="flex items-center gap-3">
@@ -209,7 +209,7 @@ export default function GradingPage() {
               <span className="truncate">{authorDisplay}</span>
             </div>
           </div>
-          <span className="border-2 border-transparent bg-background px-3 py-1.5 text-xs font-bold tracking-wider text-foreground uppercase shadow-[2px_2px_0px_0px_var(--primary)] md:text-sm">
+          <span className="border border-transparent bg-background px-3 py-1.5 text-xs font-bold tracking-wider text-foreground uppercase shadow-2xl md:text-sm">
             {submission.type}
           </span>
         </div>
@@ -241,9 +241,9 @@ export default function GradingPage() {
                   return userIds.map((id) => {
                     const editor = editors.find((e) => e.id === id);
                     return {
-                      name: editor ? editor.full_name : "AUIB Editor",
+                      name: editor ? editor.full_name : "The IDEA IQ Editor",
                       color: "#000000",
-                      avatar: "https://auibsal.org/default-avatar.png",
+                      avatar: "https://theideaiq.com/default-avatar.png",
                     };
                   });
                 }}
@@ -260,7 +260,7 @@ export default function GradingPage() {
                 <RoomProvider id={submissionId}>
                   <ClientSideSuspense 
                     fallback={
-                      <div className="flex animate-pulse items-center gap-3 p-12 text-sm font-bold tracking-widest border-4 border-black uppercase bg-white">
+                      <div className="flex animate-pulse items-center gap-3 p-12 text-sm font-bold tracking-widest border border-black uppercase bg-white">
                         <div className="h-4 w-4 animate-spin bg-black"></div>
                         Connecting to WebSocket...
                       </div>
@@ -280,7 +280,7 @@ export default function GradingPage() {
                 <iframe
                   title="Submission Document Viewer"
                   src={submission.file_url}
-                  className="h-[800px] w-full border-4 border-border bg-background shadow-[8px_8px_0px_0px_var(--brutalist-shadow)]"
+                  className="h-[800px] w-full border border-border bg-background shadow-2xl"
                 />
               ) : (
                 <Image
@@ -289,7 +289,7 @@ export default function GradingPage() {
                   height={800}
                   src={submission.file_url}
                   alt="Submission Attachment"
-                  className="max-h-[800px] max-w-full border-4 border-border bg-card object-contain p-2 shadow-[8px_8px_0px_0px_var(--brutalist-shadow)]"
+                  className="max-h-[800px] max-w-full border border-border bg-card object-contain p-2 shadow-2xl"
                 />
               )}
             </div>
@@ -305,10 +305,10 @@ export default function GradingPage() {
       </div>
 
       {/* Grading Rubric Side Panel */}
-      <div className="flex h-fit w-full flex-col border-4 border-border bg-card p-8 text-foreground shadow-[12px_12px_0px_0px_var(--brutalist-shadow)] lg:w-[400px]">
+      <div className="flex h-fit w-full flex-col border border-border bg-card p-8 text-foreground shadow-2xl lg:w-[400px]">
         <div className="mb-8 flex items-center justify-between border-b-4 border-border pb-6">
           <h3 className="text-2xl font-bold tracking-widest text-foreground uppercase">Rubric</h3>
-          <div className="border-4 border-border bg-foreground px-4 py-2 text-xl font-black text-background shadow-[4px_4px_0px_0px_var(--primary)]">
+          <div className="border border-border bg-foreground px-4 py-2 text-xl font-black text-background shadow-2xl">
             {totalScore} / 60
           </div>
         </div>
@@ -326,7 +326,7 @@ export default function GradingPage() {
             <select
               value={assignedTo}
               onChange={(e) => setAssignedTo(e.target.value)}
-              className="w-full cursor-pointer rounded-none border-4 border-border bg-background p-4 text-sm font-bold text-foreground transition-colors hover:bg-foreground/5 focus:border-primary focus:outline-none"
+              className="w-full cursor-pointer rounded-2xl border border-border bg-background p-4 text-sm font-bold text-foreground transition-colors hover:bg-foreground/5 focus:border-primary focus:outline-none"
             >
               <option value="unassigned">-- Unassigned --</option>
               {editors.map((editor) => (
@@ -344,7 +344,7 @@ export default function GradingPage() {
             <select
               value={tech}
               onChange={(e) => setTech(e.target.value)}
-              className="w-full cursor-pointer rounded-none border-4 border-border bg-background p-4 text-sm font-bold text-foreground transition-colors hover:bg-foreground/5 focus:border-primary focus:outline-none"
+              className="w-full cursor-pointer rounded-2xl border border-border bg-background p-4 text-sm font-bold text-foreground transition-colors hover:bg-foreground/5 focus:border-primary focus:outline-none"
             >
               <option value="">Select Score...</option>
               <option value="20">20 - Exceptional</option>
@@ -360,7 +360,7 @@ export default function GradingPage() {
             <select
               value={orig}
               onChange={(e) => setOrig(e.target.value)}
-              className="w-full cursor-pointer rounded-none border-4 border-border bg-background p-4 text-sm font-bold text-foreground transition-colors hover:bg-foreground/5 focus:border-primary focus:outline-none"
+              className="w-full cursor-pointer rounded-2xl border border-border bg-background p-4 text-sm font-bold text-foreground transition-colors hover:bg-foreground/5 focus:border-primary focus:outline-none"
             >
               <option value="">Select Score...</option>
               <option value="20">20 - Exceptional</option>
@@ -376,7 +376,7 @@ export default function GradingPage() {
             <select
               value={theme}
               onChange={(e) => setTheme(e.target.value)}
-              className="w-full cursor-pointer rounded-none border-4 border-border bg-background p-4 text-sm font-bold text-foreground transition-colors hover:bg-foreground/5 focus:border-primary focus:outline-none"
+              className="w-full cursor-pointer rounded-2xl border border-border bg-background p-4 text-sm font-bold text-foreground transition-colors hover:bg-foreground/5 focus:border-primary focus:outline-none"
             >
               <option value="">Select Score...</option>
               <option value="20">20 - Exceptional</option>
@@ -396,7 +396,7 @@ export default function GradingPage() {
                   name="archive"
                   checked={archive === true}
                   onChange={() => setArchive(true)}
-                  className="h-6 w-6 border-4 border-border bg-background text-primary focus:ring-primary focus:ring-offset-0"
+                  className="h-6 w-6 border border-border bg-background text-primary focus:ring-primary focus:ring-offset-0"
                 />
                 <span className="text-sm font-bold tracking-widest uppercase transition-colors group-hover:text-primary">
                   Yes
@@ -408,7 +408,7 @@ export default function GradingPage() {
                   name="archive"
                   checked={archive === false}
                   onChange={() => setArchive(false)}
-                  className="h-6 w-6 border-4 border-border bg-background text-primary focus:ring-primary focus:ring-offset-0"
+                  className="h-6 w-6 border border-border bg-background text-primary focus:ring-primary focus:ring-offset-0"
                 />
                 <span className="text-sm font-bold tracking-widest uppercase transition-colors group-hover:text-primary">
                   No
@@ -424,7 +424,7 @@ export default function GradingPage() {
             <select
               value={formatting}
               onChange={(e) => setFormatting(e.target.value)}
-              className="w-full cursor-pointer rounded-none border-4 border-border bg-background p-4 text-sm font-bold text-foreground transition-colors hover:bg-foreground/5 focus:border-primary focus:outline-none"
+              className="w-full cursor-pointer rounded-2xl border border-border bg-background p-4 text-sm font-bold text-foreground transition-colors hover:bg-foreground/5 focus:border-primary focus:outline-none"
             >
               <option value="">Select Protocol...</option>
               <option value="pass">Pass</option>
@@ -436,14 +436,14 @@ export default function GradingPage() {
         {/* System Feedback Matrix */}
         <div className="mt-8 space-y-4">
           {status === 'error' && (
-            <div className="flex items-center gap-3 border-4 border-red-500 bg-background p-4 text-sm font-bold text-red-500">
+            <div className="flex items-center gap-3 border border-red-500 bg-background p-4 text-sm font-bold text-red-500">
               <AlertTriangle size={20} className="flex-shrink-0" />
               <span className="break-words">{errorMessage}</span>
             </div>
           )}
 
           {status === 'success' && (
-            <div className="flex items-center gap-3 border-4 border-green-500 bg-background p-4 text-sm font-bold text-green-500">
+            <div className="flex items-center gap-3 border border-green-500 bg-background p-4 text-sm font-bold text-green-500">
               <CheckSquare size={20} className="flex-shrink-0" />
               <span>Rubric successfully synchronized.</span>
             </div>
@@ -455,11 +455,11 @@ export default function GradingPage() {
             type="button"
             onClick={handleSave}
             disabled={saving}
-            className="flex w-full items-center justify-center gap-3 border-4 border-border bg-foreground p-5 font-bold tracking-widest text-background uppercase shadow-[6px_6px_0px_0px_var(--brutalist-shadow)] transition-all hover:-translate-y-1 hover:border-primary hover:bg-primary hover:shadow-[8px_8px_0px_0px_var(--brutalist-shadow)] disabled:opacity-50"
+            className="flex w-full items-center justify-center gap-3 border border-border bg-foreground p-5 font-bold tracking-widest text-background uppercase shadow-2xl transition-all hover:-translate-y-1 hover:border-primary hover:bg-primary hover:shadow-2xl disabled:opacity-50"
           >
             {saving ? (
               <>
-                <div className="h-4 w-4 animate-spin rounded-none bg-background"></div>
+                <div className="h-4 w-4 animate-spin rounded-2xl bg-background"></div>
                 Transmitting...
               </>
             ) : (
@@ -473,7 +473,7 @@ export default function GradingPage() {
           <button
             type="button"
             onClick={handleDisqualify}
-            className="flex w-full items-center justify-center gap-3 border-4 border-red-500 bg-card p-5 font-bold tracking-widest text-red-500 uppercase shadow-[6px_6px_0px_0px_var(--primary)] transition-all hover:-translate-y-1 hover:bg-red-500 hover:text-white hover:shadow-[8px_8px_0px_0px_var(--primary)]"
+            className="flex w-full items-center justify-center gap-3 border border-red-500 bg-card p-5 font-bold tracking-widest text-red-500 uppercase shadow-2xl transition-all hover:-translate-y-1 hover:bg-red-500 hover:text-white hover:shadow-2xl"
           >
             <AlertOctagon size={20} />
             Disqualify & Return

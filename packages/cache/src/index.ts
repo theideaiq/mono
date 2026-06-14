@@ -9,7 +9,7 @@ export const submissionLimiter = new Ratelimit({
   redis,
   limiter: Ratelimit.slidingWindow(3, '1 h'),
   analytics: true,
-  prefix: '@auibsal/cache:submissions',
+  prefix: '@theideaiq/cache:submissions',
 });
 
 /**
@@ -20,7 +20,7 @@ export const authLimiter = new Ratelimit({
   redis,
   limiter: Ratelimit.slidingWindow(5, '15 m'),
   analytics: true,
-  prefix: '@auibsal/cache:auth',
+  prefix: '@theideaiq/cache:auth',
 });
 
 // Export the raw redis client just in case you need it for manual caching later

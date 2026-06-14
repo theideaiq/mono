@@ -18,7 +18,7 @@ export interface SendManuscriptDecisionParams {
  * @returns {Promise<{success: boolean, error?: any, data?: any}>} The result of the email dispatch operation.
  * @example
  * const result = await sendManuscriptDecision({
- *   to: 'author@auib.edu.iq',
+ *   to: 'author@theideaiq.com',
  *   authorName: 'John Doe',
  *   manuscriptTitle: 'The Genesis of Letters',
  *   status: 'accepted'
@@ -29,7 +29,7 @@ export async function sendManuscriptDecision(params: SendManuscriptDecisionParam
     const { data, error } = await resend.emails.send({
       from: SENDER_IDENTITY,
       to: [params.to],
-      subject: `[AUIB SAL] Manuscript Update: ${params.manuscriptTitle}`,
+      subject: `[The IDEA IQ SAL] Manuscript Update: ${params.manuscriptTitle}`,
       react: ManuscriptDecisionTemplate({
         authorName: params.authorName,
         manuscriptTitle: params.manuscriptTitle,

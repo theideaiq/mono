@@ -1,4 +1,4 @@
-import { createClient } from '@auibsal/auth/server';
+import { createClient } from '@theideaiq/auth/server';
 import { ArrowLeft } from 'lucide-react';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
@@ -35,9 +35,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${title} | Vol. ${issue.volume_number}, Issue ${issue.issue_number}`,
-    description: `Read the official publication of the AUIB Society of Arts and Letters.`,
+    description: `Read the official publication of the The IDEA IQ Inc..`,
     openGraph: {
-      title: `${title} | AUIB SAL Journal`,
+      title: `${title} | The IDEA IQ SAL Journal`,
       description: `Volume ${issue.volume_number}, Issue ${issue.issue_number}`,
     },
   };
@@ -84,7 +84,7 @@ export default async function JournalIssuePage({ params }: Props) {
         </h1>
         <div className="flex items-center gap-4">
           {/* Semantic inversion for dark mode contrast */}
-          <span className="inline-block border-2 border-transparent bg-foreground px-4 py-2 text-xs font-bold tracking-widest text-background uppercase">
+          <span className="inline-block border border-transparent bg-foreground px-4 py-2 text-xs font-bold tracking-widest text-background uppercase">
             Vol. {issue.volume_number}, Issue {issue.issue_number}
           </span>
           <span className="text-sm font-bold tracking-widest text-primary uppercase">
@@ -97,10 +97,10 @@ export default async function JournalIssuePage({ params }: Props) {
       </header>
 
       {/* Brutalist PDF Viewer Frame anchored to dark mode tokens */}
-      <div className="h-[80vh] w-full border-4 border-border bg-card p-2 shadow-[12px_12px_0px_0px_var(--brutalist-shadow)]">
+      <div className="h-[80vh] w-full border border-border bg-card p-2 shadow-2xl">
         <iframe
           src={issue.pdf_file_url}
-          className="h-full w-full border-2 border-border"
+          className="h-full w-full border border-border"
           title={isAr ? issue.title_ar : issue.title_en}
         />
       </div>

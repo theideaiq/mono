@@ -32,14 +32,14 @@ export async function GET() {
   try {
     // 1. Use native fetch to strictly engage the Next.js Data Cache for 1 hour
     const response = await fetch(
-      'https://auib.edu.iq/?post_type=tribe_events&ical=1&eventDisplay=list',
+      'https://theideaiq.com/?post_type=tribe_events&ical=1&eventDisplay=list',
       {
         next: { revalidate: 3600 },
       },
     );
 
     if (!response.ok) {
-      throw new Error(`Failed to fetch AUIB calendar: ${response.statusText}`);
+      throw new Error(`Failed to fetch The IDEA IQ calendar: ${response.statusText}`);
     }
 
     const icsString = await response.text();
@@ -56,7 +56,7 @@ export async function GET() {
         const vEvent = event as unknown as ParsedVEvent;
 
         return {
-          id: vEvent.uid || crypto.randomUUID(), // Fallback to avoid React key errors if AUIB drops the UID
+          id: vEvent.uid || crypto.randomUUID(), // Fallback to avoid React key errors if The IDEA IQ drops the UID
           title:
             typeof vEvent.summary === 'string'
               ? vEvent.summary
@@ -66,14 +66,14 @@ export async function GET() {
           // node-ical parses start/end as native JS Dates if formatted correctly
           start: vEvent.start instanceof Date ? vEvent.start.toISOString() : null,
           end: vEvent.end instanceof Date ? vEvent.end.toISOString() : null,
-          location: vEvent.location || 'AUIB Campus',
+          location: vEvent.location || 'The IDEA IQ Campus',
           description: vEvent.description || '',
         };
       });
 
     return NextResponse.json(auibEvents);
   } catch (error) {
-    console.error('Failed to parse AUIB calendar:', error);
+    console.error('Failed to parse The IDEA IQ calendar:', error);
     // Graceful degradation: return empty array so the client UI doesn't shatter
     return NextResponse.json([], { status: 500 });
   }

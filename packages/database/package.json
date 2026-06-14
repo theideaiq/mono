@@ -1,5 +1,5 @@
 {
-  "name": "@auibsal/database",
+  "name": "@theideaiq/database",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -23,7 +23,7 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@auibsal/config": "workspace:*",
+    "@theideaiq/config": "workspace:*",
     "typescript": "catalog:"
   }
 }

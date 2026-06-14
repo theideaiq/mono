@@ -1,6 +1,6 @@
-# @auibsal/ui
+# @theideaiq/ui
 
 Our custom brutalist React component library.
 
 ## Usage
-Components are exported via path-based exports. Example: `import { Button } from "@auibsal/ui/button";`
+Components are exported via path-based exports. Example: `import { Button } from "@theideaiq/ui/button";`

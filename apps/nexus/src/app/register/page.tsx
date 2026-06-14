@@ -1,6 +1,6 @@
 'use client';
 
-import { createClient } from '@auibsal/auth/client';
+import { createClient } from '@theideaiq/auth/client';
 import { CheckSquare, ShieldAlert } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -78,7 +78,7 @@ export default function NexusRegister() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background p-6 py-12 font-sans md:py-24">
       {/* Container fully mapped to semantic card, border, and brutalist shadow variables */}
-      <div className="w-full max-w-2xl border-4 border-border bg-card shadow-[16px_16px_0px_0px_var(--brutalist-shadow)]">
+      <div className="w-full max-w-2xl border border-border bg-card shadow-2xl">
         <div className="p-8 md:p-12">
           {/* Brutalist Header */}
           <h1 className="mb-4 border-b-4 border-border pb-4 text-4xl font-black tracking-tighter text-foreground uppercase">
@@ -89,7 +89,7 @@ export default function NexusRegister() {
           </p>
 
           {status === 'success' ? (
-            <div className="flex flex-col items-center justify-center gap-4 border-4 border-border bg-foreground p-6 text-center text-sm font-bold tracking-widest text-background uppercase">
+            <div className="flex flex-col items-center justify-center gap-4 border border-border bg-foreground p-6 text-center text-sm font-bold tracking-widest text-background uppercase">
               <CheckSquare size={48} className="text-green-500" />
               <p>Registration successful.</p>
               <p className="text-xs text-background/70">
@@ -111,11 +111,11 @@ export default function NexusRegister() {
                   required
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
-                  className="w-full rounded-none border-4 border-border bg-background p-4 font-bold text-foreground transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
+                  className="w-full rounded-2xl border border-border bg-background p-4 font-bold text-foreground transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
                 />
               </div>
 
-              <div className="space-y-6 border-4 border-border/10 bg-foreground/5 p-6">
+              <div className="space-y-6 border border-border/10 bg-foreground/5 p-6">
                 <label
                   htmlFor="isExternal"
                   className="flex cursor-pointer items-center space-x-3 text-sm font-bold tracking-wide text-foreground uppercase"
@@ -125,9 +125,9 @@ export default function NexusRegister() {
                     type="checkbox"
                     checked={isExternal}
                     onChange={(e) => setIsExternal(e.target.checked)}
-                    className="h-6 w-6 rounded-none border-4 border-border bg-background text-primary focus:ring-primary focus:ring-offset-0"
+                    className="h-6 w-6 rounded-2xl border border-border bg-background text-primary focus:ring-primary focus:ring-offset-0"
                   />
-                  <span>I am an external affiliate (No AUIB ID)</span>
+                  <span>I am an external affiliate (No The IDEA IQ ID)</span>
                 </label>
 
                 {!isExternal && (
@@ -136,7 +136,7 @@ export default function NexusRegister() {
                       htmlFor="studentId"
                       className="block text-sm font-bold tracking-wide text-foreground uppercase"
                     >
-                      AUIB Student ID & Major <span className="text-primary">*</span>
+                      The IDEA IQ Student ID & Major <span className="text-primary">*</span>
                     </label>
                     <input
                       id="studentId"
@@ -145,7 +145,7 @@ export default function NexusRegister() {
                       value={studentId}
                       onChange={(e) => setStudentId(e.target.value)}
                       placeholder="e.g. 123456 / Software Engineering"
-                      className="w-full rounded-none border-4 border-border bg-background p-4 font-bold text-foreground transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
+                      className="w-full rounded-2xl border border-border bg-background p-4 font-bold text-foreground transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
                     />
                   </div>
                 )}
@@ -163,10 +163,10 @@ export default function NexusRegister() {
                     id="email"
                     type="email"
                     required
-                    placeholder="student@auib.edu.iq"
+                    placeholder="student@theideaiq.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full rounded-none border-4 border-border bg-background p-4 font-bold text-foreground transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
+                    className="w-full rounded-2xl border border-border bg-background p-4 font-bold text-foreground transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
                   />
                 </div>
 
@@ -184,7 +184,7 @@ export default function NexusRegister() {
                     placeholder="••••••••"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="w-full rounded-none border-4 border-border bg-background p-4 font-bold text-foreground transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
+                    className="w-full rounded-2xl border border-border bg-background p-4 font-bold text-foreground transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
                   />
                 </div>
               </div>
@@ -201,7 +201,7 @@ export default function NexusRegister() {
                   rows={4}
                   value={bio}
                   onChange={(e) => setBio(e.target.value)}
-                  className="w-full resize-none rounded-none border-4 border-border bg-background p-4 leading-relaxed font-medium text-foreground transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
+                  className="w-full resize-none rounded-2xl border border-border bg-background p-4 leading-relaxed font-medium text-foreground transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
                 />
                 <div
                   className={`text-right text-xs font-bold tracking-widest uppercase ${bio.trim().split(/\s+/).length > 50 ? 'text-primary' : 'text-foreground/50'}`}
@@ -210,7 +210,7 @@ export default function NexusRegister() {
                 </div>
               </div>
 
-              <div className="border-4 border-primary bg-primary/5 p-6">
+              <div className="border border-primary bg-primary/5 p-6">
                 <label
                   htmlFor="aiPolicy"
                   className="flex cursor-pointer items-start space-x-4 text-sm font-bold tracking-wide text-foreground"
@@ -221,7 +221,7 @@ export default function NexusRegister() {
                     required
                     checked={aiPolicy}
                     onChange={(e) => setAiPolicy(e.target.checked)}
-                    className="mt-1 h-6 w-6 rounded-none border-4 border-primary bg-background text-primary focus:ring-primary focus:ring-offset-0"
+                    className="mt-1 h-6 w-6 rounded-2xl border border-primary bg-background text-primary focus:ring-primary focus:ring-offset-0"
                   />
                   <span className="leading-relaxed">
                     I guarantee that any submitted work will be entirely my own human creation. I
@@ -232,7 +232,7 @@ export default function NexusRegister() {
               </div>
 
               {status === 'error' && (
-                <div className="flex items-center gap-3 border-4 border-red-500 bg-background p-4 text-sm font-bold text-red-500">
+                <div className="flex items-center gap-3 border border-red-500 bg-background p-4 text-sm font-bold text-red-500">
                   <ShieldAlert size={20} />
                   {errorMessage}
                 </div>
@@ -241,7 +241,7 @@ export default function NexusRegister() {
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="w-full border-4 border-border bg-foreground p-4 font-bold tracking-widest text-background uppercase shadow-[6px_6px_0px_0px_var(--brutalist-shadow)] transition-all hover:-translate-y-1 hover:border-primary hover:bg-primary hover:shadow-[8px_8px_0px_0px_var(--brutalist-shadow)] disabled:opacity-50"
+                className="w-full border border-border bg-foreground p-4 font-bold tracking-widest text-background uppercase shadow-2xl transition-all hover:-translate-y-1 hover:border-primary hover:bg-primary hover:shadow-2xl disabled:opacity-50"
               >
                 {status === 'loading' ? 'Processing Application...' : 'Submit Application'}
               </button>

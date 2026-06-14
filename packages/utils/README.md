@@ -1,4 +1,4 @@
-# @auibsal/utils
+# @theideaiq/utils
 
 ## ⚡ Overview
 Core architecture and dependencies.

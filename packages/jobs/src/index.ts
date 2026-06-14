@@ -1,5 +1,5 @@
 import { qstashClient } from './client';
-import { env } from '@auibsal/env';
+import { env } from '@theideaiq/env';
 
 export interface PublishJournalPayload {
   issueId: string;

@@ -1,5 +1,5 @@
 {
-  "name": "@auibsal/analytics",
+  "name": "@theideaiq/analytics",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -17,7 +17,7 @@
     "@vercel/speed-insights": "^2.0.0"
   },
   "devDependencies": {
-    "@auibsal/config": "workspace:*",
+    "@theideaiq/config": "workspace:*",
     "@types/react": "catalog:",
     "react": "catalog:",
     "typescript": "catalog:"

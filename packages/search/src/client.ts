@@ -8,7 +8,7 @@ import type { SearchDocument } from './types';
  * @returns A strictly typed Meilisearch client instance.
  * * @example
  * ```ts
- * import { env } from '@auibsal/env';
+ * import { env } from '@theideaiq/env';
  * const searchClient = getSearchClient(env.NEXT_PUBLIC_SEARCH_URL, env.NEXT_PUBLIC_SEARCH_KEY);
  * const results = await searchClient.index('society_records').search('Brutalism');
  * ```

@@ -17,7 +17,7 @@ export async function seedDatabase(dbClient: any) {
   // 3. Inject known baseline entities
   const testEditor = await dbClient.user.create({
     data: {
-      email: 'editor@auib.edu.iq',
+      email: 'editor@theideaiq.com',
       name: 'Test Editor',
       role: 'ADMIN',
     },

@@ -1,4 +1,4 @@
-import { createClient } from '@auibsal/auth/server';
+import { createClient } from '@theideaiq/auth/server';
 import { NextResponse } from 'next/server';
 
 export async function GET(request: Request) {

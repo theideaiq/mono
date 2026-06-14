@@ -1,5 +1,5 @@
 {
-  "name": "@auibsal/cache",
+  "name": "@theideaiq/cache",
   "version": "1.0.0",
   "private": true,
   "main": "./src/index.ts",
@@ -9,12 +9,12 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@auibsal/env": "workspace:*",
+    "@theideaiq/env": "workspace:*",
     "@upstash/ratelimit": "^1.1.3",
     "@upstash/redis": "^1.31.3"
   },
   "devDependencies": {
-    "@auibsal/config": "workspace:*",
+    "@theideaiq/config": "workspace:*",
     "typescript": "catalog:"
   }
 }

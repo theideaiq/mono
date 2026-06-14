@@ -1,4 +1,4 @@
-# @auibsal/email
+# @theideaiq/email
 
 ## ⚡ Overview
 Core architecture and dependencies.

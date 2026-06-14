@@ -1,4 +1,4 @@
-import { createAdminClient } from '@auibsal/auth/admin';
+import { createAdminClient } from '@theideaiq/auth/admin';
 import { NextResponse } from 'next/server';
 
 /**
@@ -38,7 +38,7 @@ export async function GET(request: Request, { params }: { params: Promise<{ toke
 
     icsString += `BEGIN:VCALENDAR${CRLF}`;
     icsString += `VERSION:2.0${CRLF}`;
-    icsString += `PRODID:-//AUIB Society of Arts and Letters//Nexus//EN${CRLF}`;
+    icsString += `PRODID:-//The IDEA IQ Inc.//Nexus//EN${CRLF}`;
     icsString += `CALSCALE:GREGORIAN${CRLF}`;
     icsString += `METHOD:PUBLISH${CRLF}`;
     icsString += `X-WR-CALNAME:Society Events${CRLF}`;
@@ -56,7 +56,7 @@ export async function GET(request: Request, { params }: { params: Promise<{ toke
         text.replace(/\r/g, '').replace(/\n/g, '\\n').replace(/,/g, '\\,').replace(/;/g, '\\;');
 
       icsString += `BEGIN:VEVENT${CRLF}`;
-      icsString += `UID:${event.id}@auibsal.org${CRLF}`;
+      icsString += `UID:${event.id}@theideaiq.com${CRLF}`;
       icsString += `DTSTAMP:${formatIcsDate(new Date().toISOString())}${CRLF}`;
       icsString += `DTSTART:${dtStart}${CRLF}`;
       icsString += `DTEND:${dtEnd}${CRLF}`;

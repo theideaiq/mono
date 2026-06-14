@@ -38,11 +38,11 @@ export function InteractiveErrorState({
     <div
       // 1. Native DOM Directionality attribute for perfect BiDi rendering
       dir={isRtl ? 'rtl' : 'ltr'}
-      className="group relative flex min-h-[80vh] w-full flex-col items-center justify-center overflow-hidden bg-background p-8 text-foreground selection:bg-auib-red selection:text-white"
+      className="group relative flex min-h-[80vh] w-full flex-col items-center justify-center overflow-hidden bg-background p-8 text-foreground selection:bg-primary selection:text-white"
     >
-      <div className="relative z-10 w-full max-w-3xl border-4 border-auib-charcoal bg-white p-8 text-start shadow-brutalist-md transition-transform duration-500 ease-out hover:scale-[1.01] md:p-16">
-        <div className="mb-6 flex items-end justify-between border-b-4 border-auib-charcoal pb-4">
-          <span className="font-mono text-xl font-bold tracking-widest text-auib-red uppercase">
+      <div className="relative z-10 w-full max-w-3xl border border-border bg-white p-8 text-start shadow-xl transition-transform duration-500 ease-out hover:scale-[1.01] md:p-16">
+        <div className="mb-6 flex items-end justify-between border-b-4 border-border pb-4">
+          <span className="font-mono text-xl font-bold tracking-widest text-primary uppercase">
             {code}
           </span>
           <span className="font-mono text-xs uppercase opacity-50">System Directive</span>
@@ -50,12 +50,12 @@ export function InteractiveErrorState({
 
         {/* Redacted Title */}
         <div className="relative mb-6 inline-block">
-          <h1 className="relative z-0 font-serif text-5xl font-black text-auib-charcoal uppercase md:text-7xl">
+          <h1 className="relative z-0 font-serif text-5xl font-black text-foreground uppercase md:text-7xl">
             {title}
           </h1>
           <div
             className={cn(
-              'absolute inset-0 z-10 bg-auib-charcoal transition-transform duration-500 ease-out group-hover:scale-x-0',
+              'absolute inset-0 z-10 bg-brand-dark transition-transform duration-500 ease-out group-hover:scale-x-0',
               isRtl ? 'origin-right' : 'origin-left',
             )}
           />
@@ -64,7 +64,7 @@ export function InteractiveErrorState({
         {/* Redacted Message */}
         <div className="relative mb-12 max-w-xl">
           <p className="relative z-0 text-lg font-medium leading-relaxed opacity-90">{message}</p>
-          <div className="absolute inset-0 z-10 origin-top bg-auib-charcoal transition-transform delay-100 duration-500 ease-out group-hover:scale-y-0" />
+          <div className="absolute inset-0 z-10 origin-top bg-brand-dark transition-transform delay-100 duration-500 ease-out group-hover:scale-y-0" />
         </div>
 
         {/* Action Button */}
@@ -72,7 +72,7 @@ export function InteractiveErrorState({
           type="button"
           onClick={onAction}
           // 2. Synchronized with Tailwind v4 Brutalist Design Tokens
-          className="group relative overflow-hidden border-2 border-auib-charcoal bg-auib-charcoal px-8 py-4 font-mono text-sm font-bold tracking-widest text-white uppercase shadow-brutalist-sm transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-auib-red focus-visible:ring-offset-2"
+          className="group relative overflow-hidden border border-border bg-brand-dark px-8 py-4 font-mono text-sm font-bold tracking-widest text-white uppercase shadow-xl transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
         >
           <span className="relative z-10 mix-blend-difference">{actionText}</span>
           <motion.div

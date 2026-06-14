@@ -1,8 +1,8 @@
 import 'client-only';
 
-import type { Database } from '@auibsal/database/types';
+import type { Database } from '@theideaiq/database/types';
 import { createBrowserClient } from '@supabase/ssr';
-import { env } from '@auibsal/env';
+import { env } from '@theideaiq/env';
 
 /**
  * createClient

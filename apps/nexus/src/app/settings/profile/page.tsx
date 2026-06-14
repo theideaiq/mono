@@ -1,6 +1,6 @@
 'use client';
 
-import { createClient } from '@auibsal/auth/client';
+import { createClient } from '@theideaiq/auth/client';
 import { AlertTriangle, BookOpen, CheckSquare, Mail, Save, User } from 'lucide-react';
 // CRITICAL FIX: Import the Next.js router
 import { useRouter } from 'next/navigation';
@@ -136,9 +136,9 @@ export default function ProfilePage() {
             Profile Settings
           </h2>
         </div>
-        <div className="flex items-center justify-center border-4 border-border bg-card p-12 shadow-[8px_8px_0px_0px_var(--brutalist-shadow)]">
+        <div className="flex items-center justify-center border border-border bg-card p-12 shadow-2xl">
           <div className="flex animate-pulse items-center gap-4 font-bold tracking-widest text-foreground/50 uppercase">
-            <div className="h-4 w-4 animate-spin rounded-none bg-primary"></div>
+            <div className="h-4 w-4 animate-spin rounded-2xl bg-primary"></div>
             Decrypting Profile Data...
           </div>
         </div>
@@ -156,7 +156,7 @@ export default function ProfilePage() {
 
       <form
         onSubmit={handleSave}
-        className="space-y-8 border-4 border-border bg-card p-6 shadow-[8px_8px_0px_0px_var(--brutalist-shadow)] md:p-12"
+        className="space-y-8 border border-border bg-card p-6 shadow-2xl md:p-12"
       >
         {/* Core Identity Section */}
         <div className="space-y-6">
@@ -180,7 +180,7 @@ export default function ProfilePage() {
                 value={fullName}
                 placeholder="e.g. Shaheen Farjo"
                 onChange={(e) => setFullName(e.target.value)}
-                className="w-full rounded-none border-4 border-border bg-background p-4 font-bold text-foreground transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
+                className="w-full rounded-2xl border border-border bg-background p-4 font-bold text-foreground transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
               />
             </div>
 
@@ -197,7 +197,7 @@ export default function ProfilePage() {
                   type="email"
                   disabled
                   value={email}
-                  className="w-full cursor-not-allowed rounded-none border-4 border-border bg-background/50 p-4 font-bold text-foreground/50"
+                  className="w-full cursor-not-allowed rounded-2xl border border-border bg-background/50 p-4 font-bold text-foreground/50"
                 />
                 <Mail
                   className="absolute top-1/2 right-4 -translate-y-1/2 text-foreground/30"
@@ -218,7 +218,7 @@ export default function ProfilePage() {
             Academic Affiliation
           </h3>
 
-          <div className="space-y-6 border-4 border-border/10 bg-foreground/5 p-6">
+          <div className="space-y-6 border border-border/10 bg-foreground/5 p-6">
             <label
               htmlFor="isExternal"
               className="flex cursor-pointer items-center space-x-3 text-sm font-bold tracking-wide text-foreground uppercase"
@@ -231,9 +231,9 @@ export default function ProfilePage() {
                   setIsExternal(e.target.checked);
                   if (e.target.checked) setStudentId('');
                 }}
-                className="h-6 w-6 rounded-none border-4 border-border bg-background text-primary focus:ring-primary focus:ring-offset-0"
+                className="h-6 w-6 rounded-2xl border border-border bg-background text-primary focus:ring-primary focus:ring-offset-0"
               />
-              <span>I am an external affiliate (No AUIB ID)</span>
+              <span>I am an external affiliate (No The IDEA IQ ID)</span>
             </label>
 
             {!isExternal && (
@@ -242,7 +242,7 @@ export default function ProfilePage() {
                   htmlFor="studentId"
                   className="block text-sm font-bold tracking-wide text-foreground uppercase"
                 >
-                  AUIB Student ID & Major <span className="text-primary">*</span>
+                  The IDEA IQ Student ID & Major <span className="text-primary">*</span>
                 </label>
                 <input
                   id="studentId"
@@ -251,7 +251,7 @@ export default function ProfilePage() {
                   value={studentId}
                   onChange={(e) => setStudentId(e.target.value)}
                   placeholder="e.g. 123456 / Entrepreneurship"
-                  className="w-full rounded-none border-4 border-border bg-background p-4 font-bold text-foreground transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
+                  className="w-full rounded-2xl border border-border bg-background p-4 font-bold text-foreground transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
                 />
               </div>
             )}
@@ -272,7 +272,7 @@ export default function ProfilePage() {
             value={bio}
             placeholder="e.g. Founder of The IDEA IQ Inc. majoring in Entrepreneurship with a minor in Literature..."
             onChange={(e) => setBio(e.target.value)}
-            className="w-full resize-none rounded-none border-4 border-border bg-background p-4 leading-relaxed font-medium text-foreground transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
+            className="w-full resize-none rounded-2xl border border-border bg-background p-4 leading-relaxed font-medium text-foreground transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
           />
           <div
             className={`text-right text-xs font-bold tracking-widest uppercase ${bio.trim().split(/\s+/).length > 50 ? 'text-primary' : 'text-foreground/50'}`}
@@ -283,14 +283,14 @@ export default function ProfilePage() {
 
         {/* System Feedback Matrix */}
         {status === 'error' && (
-          <div className="flex items-center gap-3 border-4 border-red-500 bg-background p-4 text-sm font-bold text-red-500">
+          <div className="flex items-center gap-3 border border-red-500 bg-background p-4 text-sm font-bold text-red-500">
             <AlertTriangle size={20} className="flex-shrink-0" />
             <span className="break-words">{errorMessage}</span>
           </div>
         )}
 
         {status === 'success' && (
-          <div className="flex items-center gap-3 border-4 border-green-500 bg-background p-4 text-sm font-bold text-green-500">
+          <div className="flex items-center gap-3 border border-green-500 bg-background p-4 text-sm font-bold text-green-500">
             <CheckSquare size={20} className="flex-shrink-0" />
             <span>Profile parameters successfully synchronized.</span>
           </div>
@@ -301,11 +301,11 @@ export default function ProfilePage() {
           <button
             type="submit"
             disabled={status === 'saving'}
-            className="flex w-full items-center justify-center gap-3 border-4 border-border bg-foreground px-6 py-4 text-sm font-bold tracking-widest text-background uppercase shadow-[4px_4px_0px_0px_var(--brutalist-shadow)] transition-all hover:-translate-y-1 hover:border-primary hover:bg-primary hover:shadow-[6px_6px_0px_0px_var(--brutalist-shadow)] disabled:opacity-50 md:text-base md:shadow-[6px_6px_0px_0px_var(--brutalist-shadow)] md:hover:shadow-[8px_8px_0px_0px_var(--brutalist-shadow)]"
+            className="flex w-full items-center justify-center gap-3 border border-border bg-foreground px-6 py-4 text-sm font-bold tracking-widest text-background uppercase shadow-2xl transition-all hover:-translate-y-1 hover:border-primary hover:bg-primary hover:shadow-2xl disabled:opacity-50 md:text-base md:shadow-2xl md:hover:shadow-2xl"
           >
             {status === 'saving' ? (
               <>
-                <div className="h-4 w-4 animate-spin rounded-none bg-background"></div>
+                <div className="h-4 w-4 animate-spin rounded-2xl bg-background"></div>
                 Transmitting Data...
               </>
             ) : (

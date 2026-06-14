@@ -1,4 +1,4 @@
-# @auibsal/payments
+# @theideaiq/payments
 
 ## ⚡ Overview
 Core architecture and dependencies.

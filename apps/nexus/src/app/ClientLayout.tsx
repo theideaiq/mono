@@ -1,7 +1,7 @@
 'use client';
 
-import { createClient } from '@auibsal/auth/client';
-import { Navbar, type NavbarLink } from '@auibsal/ui/components/layout/Navbar';
+import { createClient } from '@theideaiq/auth/client';
+import { Navbar, type NavbarLink } from '@theideaiq/ui/components/layout/Navbar';
 import { useRouter } from 'next/navigation';
 import type React from 'react';
 import { useState } from 'react';

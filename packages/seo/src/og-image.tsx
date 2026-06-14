@@ -30,7 +30,7 @@ export function generateOGImage({
         }}
       >
         <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '2px solid #333', paddingBottom: '24px' }}>
-          <span style={{ fontSize: 32, letterSpacing: '-0.05em' }}>AUIB Society of Arts & Letters</span>
+          <span style={{ fontSize: 32, letterSpacing: '-0.05em' }}>The IDEA IQ Inc.</span>
           <span style={{ fontSize: 32, textTransform: 'uppercase', color: '#888' }}>{type}</span>
         </div>
         

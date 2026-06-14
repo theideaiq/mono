@@ -1,5 +1,5 @@
 import { Resend } from 'resend';
-import { env } from '@auibsal/env';
+import { env } from '@theideaiq/env';
 
 // The consumer application (Nexus/Web) is strictly responsible for providing this environment variable.
 const apiKey = env.RESEND_API_KEY;
@@ -21,4 +21,4 @@ export const resend = new Resend(apiKey);
  *
  * @description Standardized execution for SENDER_IDENTITY.
  */
-export const SENDER_IDENTITY = 'AUIB Society of Arts and Letters <team@auibsal.org>';
+export const SENDER_IDENTITY = 'The IDEA IQ Inc. <team@theideaiq.com>';

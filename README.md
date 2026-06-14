@@ -1,7 +1,7 @@
-# auibsal-monorepo
+# theideaiq-monorepo
 
 ## ⚡ Overview
-Welcome to the `auibsal-monorepo`. This is the core architecture and monorepo containing all applications, packages, and shared utilities for the AUIB Society of Arts and Letters.
+Welcome to the `theideaiq-monorepo`. This is the core architecture and monorepo containing all applications, packages, and shared utilities for the The IDEA IQ Inc..
 
 ## 🚀 Architecture
 This repository is managed using Turborepo and pnpm workspaces. It enforces strict separation of concerns through specialized packages that encapsulate domain logic.
@@ -12,21 +12,21 @@ This repository is managed using Turborepo and pnpm workspaces. It enforces stri
 - **`apps/workshop`**: Storybook/UI testing environment for our customized brutalist design system.
 
 ### Packages
-- **`@auibsal/auth`**: Centralized authentication, Supabase client initialization, and RBAC utilities.
-- **`@auibsal/database`**: Single source of truth for all Supabase generated types and schemas.
-- **`@auibsal/ui`**: Shared React components designed with a unique brutalist aesthetic.
-- **`@auibsal/i18n`**: Centralized translation dictionaries.
-- **`@auibsal/email`**: Transactional email templates and dispatching via Resend.
-- **`@auibsal/payments`**: Payment gateway integrations, primarily Wayl.
-- **`@auibsal/storage`**: Utilities for handling secure uploads to Supabase Storage.
-- **`@auibsal/seo`**: Shared SEO utilities and metadata generators.
-- **`@auibsal/analytics`**: Server-side tracking utilities.
-- **`@auibsal/utils`**: Shared helpers, validators, and formatters.
-- **`@auibsal/config`**: Shared ESLint, Biome, and TypeScript configurations.
-- **`@auibsal/testing`**: Testing setup and configurations using Vitest and Playwright.
+- **`@theideaiq/auth`**: Centralized authentication, Supabase client initialization, and RBAC utilities.
+- **`@theideaiq/database`**: Single source of truth for all Supabase generated types and schemas.
+- **`@theideaiq/ui`**: Shared React components designed with a unique brutalist aesthetic.
+- **`@theideaiq/i18n`**: Centralized translation dictionaries.
+- **`@theideaiq/email`**: Transactional email templates and dispatching via Resend.
+- **`@theideaiq/payments`**: Payment gateway integrations, primarily Wayl.
+- **`@theideaiq/storage`**: Utilities for handling secure uploads to Supabase Storage.
+- **`@theideaiq/seo`**: Shared SEO utilities and metadata generators.
+- **`@theideaiq/analytics`**: Server-side tracking utilities.
+- **`@theideaiq/utils`**: Shared helpers, validators, and formatters.
+- **`@theideaiq/config`**: Shared ESLint, Biome, and TypeScript configurations.
+- **`@theideaiq/testing`**: Testing setup and configurations using Vitest and Playwright.
 
 ## 🔒 Security & Guidelines
-- **Zero Barrel Files**: Do not use `index.ts` to re-export modules. Always use explicit path-based exports (e.g., `@auibsal/ui/button`).
+- **Zero Barrel Files**: Do not use `index.ts` to re-export modules. Always use explicit path-based exports (e.g., `@theideaiq/ui/button`).
 - **Strict Typing**: No `any` or `@ts-expect-error`.
 - **Formatting**: Biome is used for linting and formatting across the repo.
 

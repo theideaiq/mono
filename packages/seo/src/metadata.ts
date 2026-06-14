@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { env } from '@auibsal/env';
+import { env } from '@theideaiq/env';
 
 interface MetadataProps {
   title?: string;
@@ -8,7 +8,7 @@ interface MetadataProps {
   noIndex?: boolean;
 }
 
-const DEFAULT_TITLE = 'AUIB Society of Arts & Letters';
+const DEFAULT_TITLE = 'The IDEA IQ Inc.';
 const DEFAULT_DESCRIPTION = 'The premier platform for literary publication, discourse, and editorial excellence.';
 const DEFAULT_IMAGE = 'https://society.idea.inc/og-default.png'; // Will eventually route to your storage bucket
 const BASE_URL = env.NEXT_PUBLIC_APP_URL;
@@ -38,7 +38,7 @@ export function constructMetadata({
       title: title || DEFAULT_TITLE,
       description,
       images: [image],
-      creator: '@AUIBSAL', // Borderless, global identifier
+      creator: '@The IDEA IQ', // Borderless, global identifier
     },
     metadataBase: new URL(BASE_URL),
     ...(noIndex && {

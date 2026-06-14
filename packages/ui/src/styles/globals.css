@@ -6,7 +6,7 @@
   /* theideaiq Brand Colors */
   --color-brand-pink: #e91e63;
   --color-brand-yellow: #facc15;
-  --color-brand-dark: #0f172a;
+  --background: #0f172a;
   --color-brand-deep: #0f1014;
   --color-brand-bg: #121212;
   --color-brand-surface: #1e1e1e;
@@ -42,8 +42,8 @@
   --color-muted: var(--muted);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
+  --primary-foreground: var(--primary-foreground);
+  --primary: var(--primary);
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);

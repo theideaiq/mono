@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { env } from '@auibsal/env';
+import { env } from '@theideaiq/env';
 
 export default function robots(): MetadataRoute.Robots {
   const baseUrl = env.NEXT_PUBLIC_WEB_URL;

@@ -1,6 +1,6 @@
-import { createClient } from '@auibsal/auth/server';
+import { createClient } from '@theideaiq/auth/server';
 import type { MetadataRoute } from 'next';
-import { env } from '@auibsal/env';
+import { env } from '@theideaiq/env';
 
 /**
  * The revalidation period for ISR (Incremental Static Regeneration).

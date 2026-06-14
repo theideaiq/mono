@@ -1,4 +1,4 @@
-# @auibsal/testing
+# @theideaiq/testing
 
 ## ⚡ Overview
 Core architecture and dependencies.

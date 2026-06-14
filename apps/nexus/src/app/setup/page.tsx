@@ -1,6 +1,6 @@
 'use client';
 
-import { createClient } from '@auibsal/auth/client';
+import { createClient } from '@theideaiq/auth/client';
 import { ShieldAlert } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -99,7 +99,7 @@ export default function SetupProfilePage() {
     return (
       <div className="flex min-h-screen items-center justify-center bg-background p-6">
         <div className="flex animate-pulse items-center gap-4 font-bold tracking-widest text-foreground uppercase">
-          <div className="h-4 w-4 animate-spin rounded-none bg-primary"></div>
+          <div className="h-4 w-4 animate-spin rounded-2xl bg-primary"></div>
           Validating Secure Invitation...
         </div>
       </div>
@@ -108,7 +108,7 @@ export default function SetupProfilePage() {
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background p-6 py-12 font-sans md:py-24">
-      <div className="w-full max-w-2xl border-4 border-border bg-card shadow-[16px_16px_0px_0px_var(--brutalist-shadow)]">
+      <div className="w-full max-w-2xl border border-border bg-card shadow-2xl">
         <div className="p-8 md:p-12">
           <h1 className="mb-4 border-b-4 border-border pb-4 text-4xl font-black tracking-tighter text-foreground uppercase">
             Initialize Profile
@@ -133,7 +133,7 @@ export default function SetupProfilePage() {
                 value={password}
                 placeholder="••••••••"
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full rounded-none border-4 border-border bg-background p-4 font-bold text-foreground transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
+                className="w-full rounded-2xl border border-border bg-background p-4 font-bold text-foreground transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
               />
             </div>
 
@@ -150,11 +150,11 @@ export default function SetupProfilePage() {
                 required
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
-                className="w-full rounded-none border-4 border-border bg-background p-4 font-bold text-foreground transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
+                className="w-full rounded-2xl border border-border bg-background p-4 font-bold text-foreground transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
               />
             </div>
 
-            <div className="space-y-6 border-4 border-border/10 bg-foreground/5 p-6">
+            <div className="space-y-6 border border-border/10 bg-foreground/5 p-6">
               <label
                 htmlFor="isExternal"
                 className="flex cursor-pointer items-center space-x-3 text-sm font-bold tracking-wide text-foreground uppercase"
@@ -167,9 +167,9 @@ export default function SetupProfilePage() {
                     setIsExternal(e.target.checked);
                     if (e.target.checked) setStudentId('');
                   }}
-                  className="h-6 w-6 rounded-none border-4 border-border bg-background text-primary focus:ring-primary focus:ring-offset-0"
+                  className="h-6 w-6 rounded-2xl border border-border bg-background text-primary focus:ring-primary focus:ring-offset-0"
                 />
-                <span>I am an external affiliate (No AUIB ID)</span>
+                <span>I am an external affiliate (No The IDEA IQ ID)</span>
               </label>
 
               {!isExternal && (
@@ -178,7 +178,7 @@ export default function SetupProfilePage() {
                     htmlFor="studentId"
                     className="block text-sm font-bold tracking-wide text-foreground uppercase"
                   >
-                    AUIB Student ID & Major <span className="text-primary">*</span>
+                    The IDEA IQ Student ID & Major <span className="text-primary">*</span>
                   </label>
                   <input
                     id="studentId"
@@ -187,7 +187,7 @@ export default function SetupProfilePage() {
                     value={studentId}
                     onChange={(e) => setStudentId(e.target.value)}
                     placeholder="e.g. 123456 / Software Engineering"
-                    className="w-full rounded-none border-4 border-border bg-background p-4 font-bold text-foreground transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
+                    className="w-full rounded-2xl border border-border bg-background p-4 font-bold text-foreground transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
                   />
                 </div>
               )}
@@ -205,12 +205,12 @@ export default function SetupProfilePage() {
                 rows={4}
                 value={bio}
                 onChange={(e) => setBio(e.target.value)}
-                className="w-full resize-none rounded-none border-4 border-border bg-background p-4 leading-relaxed font-medium text-foreground transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
+                className="w-full resize-none rounded-2xl border border-border bg-background p-4 leading-relaxed font-medium text-foreground transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
               />
             </div>
 
             {status === 'error' && (
-              <div className="flex items-center gap-3 border-4 border-red-500 bg-background p-4 text-sm font-bold text-red-500">
+              <div className="flex items-center gap-3 border border-red-500 bg-background p-4 text-sm font-bold text-red-500">
                 <ShieldAlert size={20} className="shrink-0" />
                 <span>{errorMessage}</span>
               </div>
@@ -219,7 +219,7 @@ export default function SetupProfilePage() {
             <button
               type="submit"
               disabled={status === 'saving'}
-              className="w-full border-4 border-border bg-foreground p-4 font-bold tracking-widest text-background uppercase shadow-[6px_6px_0px_0px_var(--brutalist-shadow)] transition-all hover:-translate-y-1 hover:border-primary hover:bg-primary hover:shadow-[8px_8px_0px_0px_var(--brutalist-shadow)] disabled:opacity-50"
+              className="w-full border border-border bg-foreground p-4 font-bold tracking-widest text-background uppercase shadow-2xl transition-all hover:-translate-y-1 hover:border-primary hover:bg-primary hover:shadow-2xl disabled:opacity-50"
             >
               {status === 'saving' ? 'Initializing...' : 'Construct Profile'}
             </button>

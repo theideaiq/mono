@@ -1,5 +1,5 @@
 {
-  "name": "@auibsal/email",
+  "name": "@theideaiq/email",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -14,7 +14,7 @@
     "clean": "rm -rf dist .turbo node_modules"
   },
   "dependencies": {
-    "@auibsal/env": "workspace:*",
+    "@theideaiq/env": "workspace:*",
     "@react-email/components": "^1.0.12",
     "resend": "^6.12.4"
   },
@@ -23,7 +23,7 @@
     "react-dom": "catalog:"
   },
   "devDependencies": {
-    "@auibsal/config": "workspace:*",
+    "@theideaiq/config": "workspace:*",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "typescript": "catalog:"

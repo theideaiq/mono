@@ -6,7 +6,7 @@ import { ubuntu, ubuntuArabic } from '@/fonts/fonts';
 import ClientLayout from './ClientLayout';
 import './globals.css';
 
-import { constructMetadata } from '@auibsal/seo/metadata';
+import { constructMetadata } from '@theideaiq/seo/metadata';
 
 /**
  * metadata

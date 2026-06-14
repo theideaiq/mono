@@ -18,7 +18,7 @@ const cspHeader = `
   .trim();
 
 const nextConfig: NextConfig = {
-  transpilePackages: ['@auibsal/auth', '@auibsal/database', '@auibsal/ui', '@auibsal/seo', '@auibsal/testing', '@auibsal/i18n'],
+  transpilePackages: ['@theideaiq/auth', '@theideaiq/database', '@theideaiq/ui', '@theideaiq/seo', '@theideaiq/testing', '@theideaiq/i18n'],
   serverExternalPackages: ['node-ical'],
   images: {
     remotePatterns: [

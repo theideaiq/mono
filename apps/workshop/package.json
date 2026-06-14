@@ -1,5 +1,5 @@
 {
-  "name": "@auibsal/workshop",
+  "name": "@theideaiq/workshop",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -9,8 +9,8 @@
     "clean": "rm -rf storybook-static node_modules"
   },
   "dependencies": {
-    "@auibsal/ui": "workspace:*",
-    "@auibsal/utils": "workspace:*",
+    "@theideaiq/ui": "workspace:*",
+    "@theideaiq/utils": "workspace:*",
     "react": "catalog:",
     "react-dom": "catalog:",
     "next": "catalog:"
